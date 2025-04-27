@@ -2944,11 +2944,214 @@
 
 
 
-
                     <!-----------------------------------------------------------------------------------
                         C O N T A C T O S   &   C H A T   P R O F I S S I O N A L
                     ------------------------------------------------------------------------------------>
 
+                    <section id="content6-1" class="dynamic-section" style="display:none;">
+                        <div class="section-header alternative">
+                            <h2>Contactos & Chat Profissional</h2>
+                            <p>Gerencie seus contactos e conversas profissionais em um só lugar</p>
+                        </div>
+
+                        <div class="chat-container" id="chatapp">
+                            <!-- Contact List Sidebar -->
+                            <div class="contacts-sidebar">
+                                <div class="search-contacts">
+                                    <div class="search-box">
+                                        <i class="fas fa-search"></i>
+                                        <input type="text" placeholder="Pesquisar contactos...">
+                                    </div>
+                                    <button class="add-contact-btn">
+                                        <i class="fas fa-user-plus"></i>
+                                    </button>
+                                </div>
+
+                                <div class="contacts-filter">
+                                    <button class="filter-btn active" data-filter="all">
+                                        <i class="fas fa-border-all"></i> Todos
+                                    </button>
+                                    <button class="filter-btn" data-filter="online">
+                                        <i class="fas fa-circle"></i> Online
+                                    </button>
+                                    <button class="filter-btn" data-filter="favorites">
+                                        <i class="fas fa-star"></i> Favoritos
+                                    </button>
+                                </div>
+
+                                <div class="contacts-list">
+                                    <!-- Online Contacts -->
+                                    <div class="contact-group">
+                                        <h3>Online</h3>
+                                        <div class="contact-item online">
+                                            <div class="contact-avatar">
+                                                <img src="default-images/avatar1.jpg" alt="Contact">
+                                                <span class="status-dot"></span>
+                                            </div>
+                                            <div class="contact-info">
+                                                <h4>Alice Johnson</h4>
+                                                <p>Desenvolvedor Senior • ETH</p>
+                                            </div>
+                                            <div class="contact-meta">
+                                                <span class="last-seen">Agora</span>
+                                            </div>
+                                        </div>
+                                        <div class="contact-item online">
+                                            <div class="contact-avatar">
+                                                <img src="default-images/avatar2.jpg" alt="Contact">
+                                                <span class="status-dot"></span>
+                                            </div>
+                                            <div class="contact-info">
+                                                <h4>Bob Smith</h4>
+                                                <p>Product Manager • BNB</p>
+                                            </div>
+                                            <div class="contact-meta">
+                                                <span class="last-seen">5m atrás</span>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Offline Contacts -->
+                                    <div class="contact-group">
+                                        <h3>Offline</h3>
+                                        <div class="contact-item">
+                                            <div class="contact-avatar">
+                                                <img src="default-images/avatar3.jpg" alt="Contact">
+                                                <span class="status-dot offline"></span>
+                                            </div>
+                                            <div class="contact-info">
+                                                <h4>Carol White</h4>
+                                                <p>Analista DeFi • MATIC</p>
+                                            </div>
+                                            <div class="contact-meta">
+                                                <span class="last-seen">2h atrás</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Chat Interface -->
+                            <div class="chat-interface">
+                                <!-- Chat Header -->
+                                <div class="chat-header">
+                                    <div class="chat-user-info">
+                                        <div class="contact-avatar">
+                                            <img src="default-images/avatar1.jpg" alt="Current Chat">
+                                            <span class="status-dot"></span>
+                                        </div>
+                                        <div class="user-details">
+                                            <h4>Alice Johnson</h4>
+                                            <p>Online - Digitando...</p>
+                                        </div>
+                                    </div>
+                                    <div class="chat-actions">
+                                        <button class="action-btn" title="Chamada de Vídeo">
+                                            <i class="fas fa-video"></i>
+                                        </button>
+                                        <button class="action-btn" title="Chamada de Voz">
+                                            <i class="fas fa-phone"></i>
+                                        </button>
+                                        <button class="action-btn" title="Mais Opções">
+                                            <i class="fas fa-ellipsis-v"></i>
+                                        </button>
+                                    </div>
+                                </div>
+
+                                <!-- Chat Messages -->
+                                <div class="chat-messages">
+                                    <div class="message-group">
+                                        <div class="message received">
+                                            <div class="message-content">
+                                                <p>Olá! Vi sua análise sobre o último protocolo DeFi. Muito interessante! 👋</p>
+                                                <span class="message-time">09:30</span>
+                                            </div>
+                                        </div>
+                                        <div class="message sent">
+                                            <div class="message-content">
+                                                <p>Obrigado! Sim, estive estudando o protocolo e seus mecanismos de yield farming. 📊</p>
+                                                <span class="message-time">09:32</span>
+                                            </div>
+                                        </div>
+                                        <div class="message received">
+                                            <div class="message-content">
+                                                <p>Poderíamos marcar uma call para discutir algumas estratégias?</p>
+                                                <span class="message-time">09:33</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Chat Input -->
+                                <div class="chat-input">
+                                    <button class="attachment-btn">
+                                        <i class="fas fa-paperclip"></i>
+                                    </button>
+                                    <div class="input-container">
+                                        <input type="text" placeholder="Digite sua mensagem...">
+                                        <div class="input-actions">
+                                            <button class="emoji-btn">
+                                                <i class="far fa-smile"></i>
+                                            </button>
+                                            <button class="send-btn">
+                                                <i class="fas fa-paper-plane"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Chat Details Sidebar -->
+                            <div class="chat-details">
+                                <div class="details-header">
+                                    <h3>Detalhes do Chat</h3>
+                                    <button class="close-details">
+                                        <i class="fas fa-times"></i>
+                                    </button>
+                                </div>
+
+                                <div class="user-profile">
+                                    <img src="default-images/avatar1.jpg" alt="User Profile" class="profile-pic">
+                                    <h4>Alice Johnson</h4>
+                                    <p>Desenvolvedor Senior • ETH</p>
+                                    <div class="profile-actions">
+                                        <button class="profile-btn">
+                                            <i class="fas fa-user"></i> Ver Perfil
+                                        </button>
+                                        <button class="mute-btn">
+                                            <i class="fas fa-bell-slash"></i> Silenciar
+                                        </button>
+                                    </div>
+                                </div>
+
+                                <div class="shared-content">
+                                    <h4>Conteúdo Compartilhado</h4>
+                                    <div class="content-tabs">
+                                        <button class="tab-btn active" data-tab="media">
+                                            <i class="fas fa-image"></i> Mídia
+                                        </button>
+                                        <button class="tab-btn" data-tab="files">
+                                            <i class="fas fa-file"></i> Arquivos
+                                        </button>
+                                        <button class="tab-btn" data-tab="links">
+                                            <i class="fas fa-link"></i> Links
+                                        </button>
+                                    </div>
+
+                                    <div class="content-panel active" id="media-panel">
+                                        <div class="media-grid">
+                                            <div class="media-item">
+                                                <img src="default-images/chart1.jpg" alt="Shared Chart">
+                                            </div>
+                                            <div class="media-item">
+                                                <img src="default-images/graph2.jpg" alt="Shared Graph">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
 
 
 
@@ -2956,6 +3159,387 @@
                     <!-----------------------------------------------------------------------------------
                         T E M P L A T E S
                     ------------------------------------------------------------------------------------>
+
+                    <section id="content6-2" class="dynamic-section" style="display:none;">
+                        <div class="section-header alternative">
+                            <h2>Templates de E-mail</h2>
+                            <p>Gerencie e personalize seus modelos de e-mail profissional</p>
+                        </div>
+                    
+                        <div class="email-workspace" id="templates">
+                            <!-- Sidebar com Templates (mantido como está) -->
+                            <div class="templates-sidebar">
+                                <div class="templates-header">
+                                    <div class="search-box">
+                                        <i class="fas fa-search"></i>
+                                        <input type="text" placeholder="Buscar templates...">
+                                    </div>
+                                    <button class="new-template-btn">
+                                        <i class="fas fa-plus"></i>
+                                        Novo Template
+                                    </button>
+                                </div>
+                            
+                                <div class="templates-categories">
+                                    <button class="category-btn active" data-category="all">
+                                        <i class="fas fa-border-all"></i>
+                                        Todos os Templates
+                                    </button>
+                                    <button class="category-btn" data-category="newsletter">
+                                        <i class="fas fa-newspaper"></i>
+                                        Newsletter
+                                    </button>
+                                    <button class="category-btn" data-category="marketing">
+                                        <i class="fas fa-bullhorn"></i>
+                                        Marketing
+                                    </button>
+                                    <button class="category-btn" data-category="notification">
+                                        <i class="fas fa-bell"></i>
+                                        Notificações
+                                    </button>
+                                    <button class="category-btn" data-category="welcome">
+                                        <i class="fas fa-handshake"></i>
+                                        Boas-vindas
+                                    </button>
+                                </div>
+                            
+                                <div class="templates-list">
+                                    <!-- Template Item 1 -->
+                                    <div class="template-item active">
+                                        <div class="template-icon">
+                                            <i class="fas fa-newspaper"></i>
+                                        </div>
+                                        <div class="template-info">
+                                            <h4>Newsletter Mensal</h4>
+                                            <p>Atualização de mercado cripto</p>
+                                            <small class="template-meta">
+                                                Atualizado: 2025-04-27 12:57:59
+                                            </small>
+                                        </div>
+                                        <div class="template-actions">
+                                            <button class="action-btn" title="Duplicar">
+                                                <i class="fas fa-copy"></i>
+                                            </button>
+                                            <button class="action-btn" title="Excluir">
+                                                <i class="fas fa-trash-alt"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                            
+                                    <!-- Template Item 2 -->
+                                    <div class="template-item">
+                                        <div class="template-icon">
+                                            <i class="fas fa-bullhorn"></i>
+                                        </div>
+                                        <div class="template-info">
+                                            <h4>Lançamento DeFi</h4>
+                                            <p>Anúncio de novo protocolo</p>
+                                            <small class="template-meta">
+                                                Criado por: Ben-FullstackDEV
+                                            </small>
+                                        </div>
+                                        <div class="template-actions">
+                                            <button class="action-btn" title="Duplicar">
+                                                <i class="fas fa-copy"></i>
+                                            </button>
+                                            <button class="action-btn" title="Excluir">
+                                                <i class="fas fa-trash-alt"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                            
+                                    <!-- Template Item 3 -->
+                                    <div class="template-item">
+                                        <div class="template-icon">
+                                            <i class="fas fa-handshake"></i>
+                                        </div>
+                                        <div class="template-info">
+                                            <h4>Onboarding</h4>
+                                            <p>Boas-vindas aos novos usuários</p>
+                                            <small class="template-meta">
+                                                Última edição: 2025-04-27
+                                            </small>
+                                        </div>
+                                        <div class="template-actions">
+                                            <button class="action-btn" title="Duplicar">
+                                                <i class="fas fa-copy"></i>
+                                            </button>
+                                            <button class="action-btn" title="Excluir">
+                                                <i class="fas fa-trash-alt"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                    
+                            <!-- Editor de Templates Atualizado -->
+                            <div class="template-editor">
+                                <div class="editor-header">
+                                    <div class="editor-title">
+                                        <input type="text" value="Newsletter Mensal" placeholder="Nome do template">
+                                        <input type="text" value="Atualização de mercado cripto" placeholder="Descrição breve">
+                                    </div>
+                                    <div class="editor-actions">
+                                        <button class="mode-toggle" title="Alternar Modo HTML">
+                                            <i class="fas fa-code"></i>
+                                            <span>Modo HTML</span>
+                                        </button>
+                                        <button class="preview-btn">
+                                            <i class="fas fa-eye"></i>
+                                            Visualizar
+                                        </button>
+                                        <button class="save-btn">
+                                            <i class="fas fa-save"></i>
+                                            Salvar
+                                        </button>
+                                        <button class="send-btn">
+                                            <i class="fas fa-paper-plane"></i>
+                                            Enviar
+                                        </button>
+                                    </div>
+                                </div>
+                    
+                                <div class="editor-toolbar" id="visualToolbar">
+                                    <div class="toolbar-group">
+                                        <button class="toolbar-btn" title="Negrito">
+                                            <i class="fas fa-bold"></i>
+                                        </button>
+                                        <button class="toolbar-btn" title="Itálico">
+                                            <i class="fas fa-italic"></i>
+                                        </button>
+                                        <button class="toolbar-btn" title="Sublinhado">
+                                            <i class="fas fa-underline"></i>
+                                        </button>
+                                    </div>
+                                    <div class="toolbar-group">
+                                        <button class="toolbar-btn" title="Lista não ordenada">
+                                            <i class="fas fa-list-ul"></i>
+                                        </button>
+                                        <button class="toolbar-btn" title="Lista ordenada">
+                                            <i class="fas fa-list-ol"></i>
+                                        </button>
+                                    </div>
+                                    <div class="toolbar-group">
+                                        <button class="toolbar-btn" title="Link">
+                                            <i class="fas fa-link"></i>
+                                        </button>
+                                        <button class="toolbar-btn" title="Imagem">
+                                            <i class="fas fa-image"></i>
+                                        </button>
+                                    </div>
+                                    <div class="toolbar-group">
+                                        <button class="toolbar-btn" title="Variáveis">
+                                            <i class="fas fa-code"></i>
+                                        </button>
+                                        <button class="toolbar-btn" title="Limpar formatação">
+                                            <i class="fas fa-eraser"></i>
+                                        </button>
+                                    </div>
+                                    <div class="toolbar-group">
+                                        <button class="toolbar-btn" title="Alinhar à Esquerda">
+                                            <i class="fas fa-align-left"></i>
+                                        </button>
+                                        <button class="toolbar-btn" title="Centralizar">
+                                            <i class="fas fa-align-center"></i>
+                                        </button>
+                                        <button class="toolbar-btn" title="Alinhar à Direita">
+                                            <i class="fas fa-align-right"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                    
+                                <!-- Toolbar HTML -->
+                                <div class="editor-toolbar" id="htmlToolbar" style="display: none;">
+                                    <div class="toolbar-group">
+                                        <button class="toolbar-btn" title="Formatar HTML">
+                                            <i class="fas fa-indent"></i>
+                                        </button>
+                                        <button class="toolbar-btn" title="Minimizar HTML">
+                                            <i class="fas fa-compress"></i>
+                                        </button>
+                                    </div>
+                                    <div class="toolbar-group">
+                                        <button class="toolbar-btn" title="Inserir Tabela">
+                                            <i class="fas fa-table"></i>
+                                        </button>
+                                        <button class="toolbar-btn" title="Inserir Div">
+                                            <i class="fas fa-square-full"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                    
+                                <div class="editor-content">
+                                    <div class="email-subject">
+                                        <label for="emailSubject">Assunto do E-mail:</label>
+                                        <input type="text" id="emailSubject" name="emailSubject" placeholder="Digite o assunto do e-mail">
+                                    </div>
+                    
+                                    <!-- Editor Visual -->
+                                    <div class="editor-container">
+                                        <div class="email-body" contenteditable="true">
+                                            <h2>Olá {nome_usuario},</h2>
+                                            <p>Bem-vindo ao resumo mensal do mercado de criptomoedas!</p>
+                                            <br>
+                                            <h3>Destaques do Mês:</h3>
+                                            <ul>
+                                                <li>Bitcoin atinge nova máxima histórica</li>
+                                                <li>Ethereum 2.0 alcança marco importante</li>
+                                                <li>Novos protocolos DeFi em destaque</li>
+                                            </ul>
+                                            <br>
+                                            <p>Para mais informações, acesse nossa plataforma.</p>
+                                            <br>
+                                            <p>Atenciosamente,<br>{nome_remetente}</p>
+                                        </div>
+                    
+                                        <!-- Editor HTML -->
+                                        <div class="html-editor" style="display: none;">
+                                            <textarea id="htmlCode" class="html-code" spellcheck="false"></textarea>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                    
+                            <!-- Painel de Variáveis Atualizado -->
+                            <div class="variables-panel">
+                                <div class="panel-header">
+                                    <h3>Variáveis & Snippets</h3>
+                                    <div class="panel-actions">
+                                        <button class="snippet-btn" title="Novo Snippet">
+                                            <i class="fas fa-plus"></i>
+                                        </button>
+                                        <button class="close-panel">
+                                            <i class="fas fa-times"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                    
+                                <div class="panel-tabs">
+                                    <button class="tab-btn active" data-tab="variables">Variáveis</button>
+                                    <button class="tab-btn" data-tab="snippets">Snippets HTML</button>
+                                </div>
+                    
+                                <!-- Painel de Variáveis -->
+                                <div class="tab-content active" id="variables-content">
+                                    <div class="variable-group">
+                                        <h4>Dados do Usuário</h4>
+                                        <div class="variable-item" draggable="true" data-variable="{nome_usuario}">
+                                            <span class="variable-name">Nome do Usuário</span>
+                                            <code>{nome_usuario}</code>
+                                        </div>
+                                        <div class="variable-item" draggable="true" data-variable="{email_usuario}">
+                                            <span class="variable-name">E-mail</span>
+                                            <code>{email_usuario}</code>
+                                        </div>
+                                    </div>
+
+                                    <div class="variable-group">
+                                        <h4>Dados do Remetente</h4>
+                                        <div class="variable-item" draggable="true" data-variable="{nome_remetente}">
+                                            <span class="variable-name">Nome do Remetente</span>
+                                            <code>{nome_remetente}</code>
+                                        </div>
+                                        <div class="variable-item" draggable="true" data-variable="{cargo_remetente}">
+                                            <span class="variable-name">Cargo</span>
+                                            <code>{cargo_remetente}</code>
+                                        </div>
+                                    </div>
+
+                                    <div class="variable-group">
+                                        <h4>Dados da Plataforma</h4>
+                                        <div class="variable-item" draggable="true" data-variable="{nome_plataforma}">
+                                            <span class="variable-name">Nome da Plataforma</span>
+                                            <code>{nome_plataforma}</code>
+                                        </div>
+                                        <div class="variable-item" draggable="true" data-variable="{url_plataforma}">
+                                            <span class="variable-name">URL da Plataforma</span>
+                                            <code>{url_plataforma}</code>
+                                        </div>
+                                    </div>
+
+                                    <!-- Novas variáveis de sistema -->
+                                    <div class="variable-group">
+                                        <h4>Dados do Sistema</h4>
+                                        <div class="variable-item" draggable="true" data-variable="{data_hora_utc}">
+                                            <span class="variable-name">Data e Hora UTC</span>
+                                            <code>{data_hora_utc}</code>
+                                            <small class="variable-preview">2025-04-27 12:50:59</small>
+                                        </div>
+                                        <div class="variable-item" draggable="true" data-variable="{usuario_atual}">
+                                            <span class="variable-name">Usuário Atual</span>
+                                            <code>{usuario_atual}</code>
+                                            <small class="variable-preview">Ben-FullstackDEV</small>
+                                        </div>
+                                        <div class="variable-item" draggable="true" data-variable="{data_atual}">
+                                            <span class="variable-name">Data Atual</span>
+                                            <code>{data_atual}</code>
+                                            <small class="variable-preview">2025-04-27</small>
+                                        </div>
+                                        <div class="variable-item" draggable="true" data-variable="{hora_atual}">
+                                            <span class="variable-name">Hora Atual</span>
+                                            <code>{hora_atual}</code>
+                                            <small class="variable-preview">12:50:59</small>
+                                        </div>
+                                    </div>
+                                </div>
+                    
+                                <!-- Painel de Snippets HTML -->
+                                <div class="tab-content" id="snippets-content">
+                                    <div class="snippet-group">
+                                        <h4>Layouts</h4>
+                                        <div class="snippet-item" draggable="true" data-snippet="two-column">
+                                            <span class="snippet-name">2 Colunas</span>
+                                            <code>&lt;div class="row"&gt;...&lt;/div&gt;</code>
+                                        </div>
+                                        <div class="snippet-item" draggable="true" data-snippet="three-column">
+                                            <span class="snippet-name">3 Colunas</span>
+                                            <code>&lt;div class="row-3"&gt;...&lt;/div&gt;</code>
+                                        </div>
+                                    </div>
+                                    <div class="snippet-group">
+                                        <h4>Componentes</h4>
+                                        <div class="snippet-item" draggable="true" data-snippet="button">
+                                            <span class="snippet-name">Botão</span>
+                                            <code>&lt;button class="email-btn"&gt;...&lt;/button&gt;</code>
+                                        </div>
+                                        <div class="snippet-item" draggable="true" data-snippet="card">
+                                            <span class="snippet-name">Card</span>
+                                            <code>&lt;div class="email-card"&gt;...&lt;/div&gt;</code>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    
+                        <!-- Modal de Preview -->
+                        <div class="preview-modal" style="display: none;">
+                            <div class="preview-content">
+                                <div class="preview-header">
+                                    <h3>Preview do Template</h3>
+                                    <div class="preview-actions">
+                                        <button class="preview-device" data-device="desktop">
+                                            <i class="fas fa-desktop"></i>
+                                        </button>
+                                        <button class="preview-device" data-device="tablet">
+                                            <i class="fas fa-tablet-alt"></i>
+                                        </button>
+                                        <button class="preview-device" data-device="mobile">
+                                            <i class="fas fa-mobile-alt"></i>
+                                        </button>
+                                        <button class="close-preview">
+                                            <i class="fas fa-times"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="preview-frame">
+                                    <iframe id="previewFrame" title=""></iframe>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+
+
 
 
 
