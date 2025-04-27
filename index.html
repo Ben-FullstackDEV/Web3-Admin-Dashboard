@@ -168,16 +168,9 @@
                     <!-- Menu Principal -->
                     <nav id="menu">
                         <h3>Dashboard</h3>
-                        &emsp;&emsp;     
-                        <ul>
-                            <!-- Início -->
-                            <li class="defaultActive" data-content="default-content" id="home">
-                                <div class="item-content">
-                                    <i class="fas fa-home"></i>
-                                    <span>Início</span>
-                                </div>
-                            </li>
+                        &emsp;&emsp;
 
+                        <ul id="online-items">
                             <!-- Perfil -->
                             <li class="active" data-content="content1" id="user" style="display: none;">
                                 <div class="item-content">
@@ -328,7 +321,19 @@
                                     <span>Laboratório de Códigos</span>
                                 </div>
                             </li>
-                            <li data-content="content13">
+                        </ul>
+
+                             
+                        <ul class="offline-items">
+                            <!-- Início -->
+                            <li class="defaultActive" data-content="default-content" id="home">
+                                <div class="item-content">
+                                    <i class="fas fa-home"></i>
+                                    <span>Início</span>
+                                </div>
+                            </li>
+
+                            <li data-content="technology">
                                 <div class="item-content">
                                     <i class="fas fa-microchip"></i>
                                     <span>Tecnologias</span>
@@ -338,21 +343,28 @@
                             
                         <!-- Seção de Suporte -->
                         <h3>Suporte</h3>
-                        &emsp;&emsp;     
-                        <ul>                            
-                            <li data-content="helpcenter1">
+                        &emsp;&emsp; 
+
+                        <ul class="offline-items">                           
+                            <li data-content="helpcenter-1">
                                 <div class="item-content">
                                     <i class="fas fa-headset"></i>
                                     <span>Central de Ajuda</span>
                                 </div>
                             </li>
-                            <li data-content="helpcenter2">
+                            <li data-content="helpcenter-2">
                                 <div class="item-content">
                                     <i class="fas fa-question-circle"></i>
                                     <span>F.A.Qs</span>
                                 </div>
                             </li>
-                            <li data-content="helpcenter3">
+                            <li data-content="terms">
+                                <div class="item-content">
+                                    <i class="fas fa-question-circle"></i>
+                                    <span>Termos & Condições</span>
+                                </div>
+                            </li>
+                            <li data-content="privacy">
                                 <div class="item-content">
                                     <i class="fas fa-shield-alt"></i>
                                     <span>Política de Privacidade</span>
@@ -378,47 +390,1036 @@
                 </div>             
 
 
-                <!---- Conteúdo antes da conexão do painel ---->
-                <div class="right-column" id="default-content">
-
-                    <div class="market-info" id="standard-widget" >
-                        <div id="coinmarketcap-widget-marquee" coins="1,1027,825,5994,5426,74,8916,5805,11841,6836,11840,6636,28321,4642,3794,2087,2941,7278,10804,12885,7083,8104,3635,11865,3408,4030,1966,24478,1958,1839,35336,35347,32503,512,7186,8267,21794,22861,7226,12220,24091,20947,6719,32956,4847" currency="USD" theme="light" transparent="false" show-symbol-logo="true"></div>
-                    </div>  
-                    <iframe class="market-info" id="dark-widget" src="cmc-widget.html" title="dark-theme-widget" style="display: none;"></iframe>
-   
-                    <div class="welcome-area">
-                        <h1>Bem-Vindo (a)</h1>
-                        <small>À Sua Plataforma de Monitoramento Web-3</small>
-
-                        <hr>
-                        <p>Conecte sua carteira e mergulhe no universo das criptomoedas! ...Acompanhe os seus projetos, <br> visualize gráficos e receba as últimas notícias.</p>
- 
-                        <button class="connectButton-2" id="connectButton">
-                            <i class="fas fa-wallet"></i> Conectar Painel
-                        </button>
-
-                        <ul class="features-list">
-                            <li><i class="fas fa-chart-line"></i> Gráficos em Tempo Real</li>
-                            <li><i class="fas fa-newspaper"></i> Notícias e Análises</li>
-                            <li><i class="fas fa-tasks"></i> Gerenciamento de Projetos</li>
-                            <li><i class="fas fa-lock"></i> Segurança Avançada</li>
-                        </ul>
-                    </div>
-                    
-                    <p class="citation">" Transcende o valor da sua cripto para outra dimensão! "</p>
-                    
-                    <div class="essential">
-                        <h3>Conversor Dinâmico de Bitcoin <br> para <span>Moedas Fiduciárias</span></h3>
-                        <gecko-coin-converter-widget locale="en" outlined="true" initial-currency="usd" width="600"></gecko-coin-converter-widget>
-                    </div>
-                </div>
-
-
             <!-------------------------------------------------------------------------------------------------------
-                C O N T E Ú D O   P Ó S - C O N E X Ã O   D O   P A I N E L
+                C O N T E Ú D O   " O F F L I N E "   D O   P A I N E L
             -------------------------------------------------------------------------------------------------------->
             
-                <div class="right-column-2" id="menu-content" style="display: none;">
+                <div class="right-column" id="menu-content">
+            
+                    <section id="default-content" style="display: block;">
+                        <div class="market-info" id="standard-widget" >
+                            <div id="coinmarketcap-widget-marquee" coins="1,1027,825,5994,5426,74,8916,5805,11841,6836,11840,6636,28321,4642,3794,2087,2941,7278,10804,12885,7083,8104,3635,11865,3408,4030,1966,24478,1958,1839,35336,35347,32503,512,7186,8267,21794,22861,7226,12220,24091,20947,6719,32956,4847" currency="USD" theme="light" transparent="false" show-symbol-logo="true"></div>
+                        </div>  
+                        <iframe class="market-info" id="dark-widget" src="cmc-widget.html" title="dark-theme-widget" style="display: none;"></iframe>
+       
+                        <div class="welcome-area">
+                            <h1>Bem-Vindo (a)</h1>
+                            <small>À Sua Plataforma de Monitoramento Web-3</small>
+    
+                            <hr>
+                            <p>Conecte sua carteira e mergulhe no universo das criptomoedas! ...Acompanhe os seus projetos, <br> visualize gráficos e receba as últimas notícias.</p>
+     
+                            <button class="connectButton-2" id="connectButton">
+                                <i class="fas fa-wallet"></i> Conectar Painel
+                            </button>
+    
+                            <ul class="features-list">
+                                <li><i class="fas fa-chart-line"></i> Gráficos em Tempo Real</li>
+                                <li><i class="fas fa-newspaper"></i> Notícias e Análises</li>
+                                <li><i class="fas fa-tasks"></i> Gerenciamento de Projetos</li>
+                                <li><i class="fas fa-lock"></i> Segurança Avançada</li>
+                            </ul>
+                        </div>
+                        
+                        <p class="citation">" Transcende o valor da sua cripto para outra dimensão! "</p>
+                        
+                        <div class="essential">
+                            <h3>Conversor Dinâmico de Bitcoin <br> para <span>Moedas Fiduciárias</span></h3>
+                            <gecko-coin-converter-widget locale="en" outlined="true" initial-currency="usd" width="600"></gecko-coin-converter-widget>
+                        </div>
+                    </section>
+
+
+                    
+
+                    <!---- 
+                        ▀▀█▀▀ █▀▀ █▀▀ █▀▀▄ █▀▀█ █░░ █▀▀█ █▀▀▀ ░▀░ █▀▀█ █▀▀
+                        ░░█░░ █▀▀ █░░ █░░█ █░░█ █░░ █░░█ █░▀█ ▀█▀ █▄▄█ ▀▀█
+                        ░░▀░░ ▀▀▀ ▀▀▀ ▀░░▀ ▀▀▀▀ ▀▀▀ ▀▀▀▀ ▀▀▀▀ ▀▀▀ ▀░░▀ ▀▀▀
+                    ----->
+                    
+                    <section class="dynamic-section" id="technology" style="display:none;">                        
+                        <div class="section-header alternative">
+                            <h2>Tecnologias</h2>
+                            <p>Explore as tecnologias blockchain mais recentes</p>
+                        </div>
+
+                        <!-- Container Principal -->
+                        <div class="section-container" id="tech-layout">
+
+                            <!-- Container Superior -->
+                            <div class="tech-tabs-container">
+                                <!-- Navegação dos Separadores -->
+                                <div class="tech-tabs-nav">
+                                    <button class="tech-tab active" data-tab="blockchain">
+                                        Blockchain
+                                    </button>
+                                    <button class="tech-tab" data-tab="web3">
+                                        Web3
+                                    </button>
+                                    <button class="tech-tab" data-tab="defi">
+                                        DeFi
+                                    </button>
+                                    <button class="tech-tab" data-tab="nft">
+                                        NFTs
+                                    </button>
+                                </div>
+                        
+                                <!-- Conteúdo dos Separadores -->
+                                <!-- Blockchain Tab -->
+                                <div class="tech-tab-content active" id="blockchain">
+                                    <div class="tech-carousel">
+                                        <button class="carousel-btn prev">
+                                            <i class="fas fa-chevron-left"></i>
+                                        </button>
+                                        
+                                        <div class="carousel-container">
+                                            <div class="carousel-track">
+                                                <div class="tech-card" data-tech="solidity">
+                                                    <img src="tech-logos/solidity.png" alt="Solidity">
+                                                    <h4>Solidity</h4>
+                                                </div>
+                                                <div class="tech-card" data-tech="hardhat">
+                                                    <img src="tech-logos/hardhat.png" alt="Hardhat">
+                                                    <h4>Hardhat</h4>
+                                                </div>
+                                                <div class="tech-card" data-tech="truffle">
+                                                    <img src="tech-logos/truffle.png" alt="Truffle">
+                                                    <h4>Truffle</h4>
+                                                </div>
+                                                <div class="tech-card" data-tech="web3js">
+                                                    <img src="tech-logos/web3js.png" alt="Web3.js">
+                                                    <h4>Web3.js</h4>
+                                                </div>
+                                                <div class="tech-card" data-tech="ethers">
+                                                    <img src="tech-logos/ethers.png" alt="Ethers.js">
+                                                    <h4>Ethers.js</h4>
+                                                </div>
+                                                <div class="tech-card" data-tech="remix">
+                                                    <img src="tech-logos/remix.png" alt="Remix IDE">
+                                                    <h4>Remix IDE</h4>
+                                                </div>
+                                                <div class="tech-card" data-tech="ganache">
+                                                    <img src="tech-logos/ganache.png" alt="Ganache">
+                                                    <h4>Ganache</h4>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <button class="carousel-btn next">
+                                            <i class="fas fa-chevron-right"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                                            
+                                <!-- Web3 Tab -->
+                                <div class="tech-tab-content" id="web3">
+                                    <div class="tech-carousel">
+                                        <button class="carousel-btn prev">
+                                            <i class="fas fa-chevron-left"></i>
+                                        </button>
+                                        <div class="carousel-container">
+                                            <div class="carousel-track">
+                                                <div class="tech-card" data-tech="metamask">
+                                                    <img src="tech-logos/metamask.png" alt="MetaMask">
+                                                    <h4>MetaMask</h4>
+                                                </div>
+                                                <div class="tech-card" data-tech="ipfs">
+                                                    <img src="tech-logos/ipfs.png" alt="IPFS">
+                                                    <h4>IPFS</h4>
+                                                </div>
+                                                <div class="tech-card" data-tech="thegraph">
+                                                    <img src="tech-logos/thegraph.png" alt="The Graph">
+                                                    <h4>The Graph</h4>
+                                                </div>
+                                                <div class="tech-card" data-tech="infura">
+                                                    <img src="tech-logos/infura.png" alt="Infura">
+                                                    <h4>Infura</h4>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <button class="carousel-btn next">
+                                            <i class="fas fa-chevron-right"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                        
+                                <!-- DeFi Tab -->
+                                <div class="tech-tab-content" id="defi">
+                                    <div class="tech-carousel">
+                                        <button class="carousel-btn prev">
+                                            <i class="fas fa-chevron-left"></i>
+                                        </button>
+                                        <div class="carousel-container">
+                                            <div class="carousel-track">
+                                                <div class="tech-card" data-tech="uniswap">
+                                                    <img src="tech-logos/uniswap.png" alt="Uniswap">
+                                                    <h4>Uniswap</h4>
+                                                </div>
+                                                <div class="tech-card" data-tech="aave">
+                                                    <img src="tech-logos/aave.png" alt="Aave">
+                                                    <h4>Aave</h4>
+                                                </div>
+                                                <div class="tech-card" data-tech="compound">
+                                                    <img src="tech-logos/compound.png" alt="Compound">
+                                                    <h4>Compound</h4>
+                                                </div>
+                                                <div class="tech-card" data-tech="makerdao">
+                                                    <img src="tech-logos/makerdao.png" alt="MakerDAO">
+                                                    <h4>MakerDAO</h4>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <button class="carousel-btn next">
+                                            <i class="fas fa-chevron-right"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                        
+                                <!-- NFT Tab -->
+                                <div class="tech-tab-content" id="nft">
+                                    <div class="tech-carousel">
+                                        <button class="carousel-btn prev">
+                                            <i class="fas fa-chevron-left"></i>
+                                        </button>
+                                        <div class="carousel-container">
+                                            <div class="carousel-track">
+                                                <div class="tech-card" data-tech="opensea">
+                                                    <img src="tech-logos/opensea.png" alt="OpenSea">
+                                                    <h4>OpenSea</h4>
+                                                </div>
+                                                <div class="tech-card" data-tech="rarible">
+                                                    <img src="tech-logos/rarible.png" alt="Rarible">
+                                                    <h4>Rarible</h4>
+                                                </div>
+                                                <div class="tech-card" data-tech="erc721">
+                                                    <img src="tech-logos/erc721.png" alt="ERC-721">
+                                                    <h4>ERC-721</h4>
+                                                </div>
+                                                <div class="tech-card" data-tech="ipfs-nft">
+                                                    <img src="tech-logos/ipfs-nft.png" alt="IPFS NFT Storage">
+                                                    <h4>IPFS NFT Storage</h4>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <button class="carousel-btn next">
+                                            <i class="fas fa-chevron-right"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+
+                        
+                            <!-- Container Inferior -->
+                            <div class="tech-description">
+                                <!-- Descrição Blockchain -->
+                                <div class="description-content active" id="blockchain-desc">
+                                    <h3>Ferramentas de Desenvolvimento Blockchain</h3>
+                                    <div class="tech-grid">
+                                        <div class="tech-item" id="tech-solidity">
+                                            <h4>Solidity</h4>
+                                            <p>Linguagem de programação orientada a contratos para desenvolvimento de smart contracts na rede Ethereum.</p>
+                                        </div>
+                                        <div class="tech-item" id="tech-hardhat">
+                                            <h4>Hardhat</h4>
+                                            <p>Ambiente de desenvolvimento profissional para Ethereum, fornecendo ferramentas para debugging, testes e implantação.</p>
+                                        </div>
+                                        <div class="tech-item" id="tech-truffle">
+                                            <h4>Truffle Suite</h4>
+                                            <p>Framework completo para desenvolvimento de DApps, incluindo compilação, linkagem e gerenciamento de binários.</p>
+                                        </div>
+                                        <div class="tech-item" id="tech-web3js">
+                                            <h4>Web3.js</h4>
+                                            <p>Biblioteca que permite interagir com nós Ethereum locais ou remotos usando HTTP, IPC ou WebSocket.</p>
+                                        </div>
+                                        <div class="tech-item" id="tech-ethers">
+                                            <h4>Ethers.js</h4>
+                                            <p>Biblioteca JavaScript moderna e completa para interagir com a blockchain Ethereum, oferecendo uma API mais intuitiva e recursos avançados de gerenciamento de carteiras.</p>
+                                        </div>
+                                        <div class="tech-item" id="tech-remix">
+                                            <h4>Remix IDE</h4>
+                                            <p>IDE baseada em navegador para desenvolvimento Ethereum, oferecendo um ambiente integrado para escrita, teste e depuração de smart contracts com interface amigável.</p>
+                                        </div>
+                                        <div class="tech-item" id="tech-ganache">
+                                            <h4>Ganache</h4>
+                                            <p>Blockchain Ethereum pessoal para desenvolvimento, permitindo implantar contratos, desenvolver aplicações e executar testes em um ambiente controlado.</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Descrição Web3 -->
+                                <div class="description-content" id="web3-desc">
+                                    <h3>Tecnologias Web3</h3>
+                                    <div class="tech-grid">
+                                        <div class="tech-item" id="tech-metamask">
+                                            <h4>MetaMask</h4>
+                                            <p>Carteira cripto e gateway para aplicações Web3, permitindo interações com DApps.</p>
+                                        </div>
+                                        <div class="tech-item" id="tech-ipfs">
+                                            <h4>IPFS</h4>
+                                            <p>Sistema de arquivos distribuído para armazenamento e acesso descentralizado de dados.</p>
+                                        </div>
+                                        <div class="tech-item" id="tech-thegraph">
+                                            <h4>The Graph</h4>
+                                            <p>Protocolo de indexação para consulta eficiente de dados blockchain.</p>
+                                        </div>
+                                        <div class="tech-item" id="tech-infura">
+                                            <h4>Infura</h4>
+                                            <p>Infraestrutura escalável para acesso a redes blockchain e desenvolvimento de DApps.</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Descrição DeFi -->
+                                <div class="description-content" id="defi-desc">
+                                    <h3>Protocolos DeFi</h3>
+                                    <div class="tech-grid">
+                                        <div class="tech-item" id="tech-uniswap">
+                                            <h4>Uniswap</h4>
+                                            <p>Protocolo líder em exchanges descentralizadas usando o modelo AMM.</p>
+                                        </div>
+                                        <div class="tech-item" id="tech-aave">
+                                            <h4>Aave</h4>
+                                            <p>Protocolo de empréstimo descentralizado com taxas de juros dinâmicas.</p>
+                                        </div>
+                                        <div class="tech-item" id="tech-compound">
+                                            <h4>Compound</h4>
+                                            <p>Mercado monetário algorítmico e autônomo para criptoativos.</p>
+                                        </div>
+                                        <div class="tech-item" id="tech-makerdao">
+                                            <h4>MakerDAO</h4>
+                                            <p>Protocolo de empréstimo colateralizado e emissão da stablecoin DAI.</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Descrição NFTs -->
+                                <div class="description-content" id="nft-desc">
+                                    <h3>Ecossistema NFT</h3>
+                                    <div class="tech-grid">
+                                        <div class="tech-item" id="tech-opensea">
+                                            <h4>OpenSea</h4>
+                                            <p>Maior marketplace de NFTs com suporte a múltiplas blockchains.</p>
+                                        </div>
+                                        <div class="tech-item" id="tech-rarible">
+                                            <h4>Rarible</h4>
+                                            <p>Plataforma comunitária para criação e comercialização de NFTs.</p>
+                                        </div>
+                                        <div class="tech-item" id="tech-erc721">
+                                            <h4>ERC-721</h4>
+                                            <p>Padrão técnico para tokens não fungíveis na rede Ethereum.</p>
+                                        </div>
+                                        <div class="tech-item" id="tech-ipfs-nft">
+                                            <h4>IPFS NFT Storage</h4>
+                                            <p>Solução de armazenamento descentralizado otimizada para metadados de NFTs.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>                        
+                    </section>
+
+
+                    <section class="dynamic-section" id="helpcenter-1" style="display:none;">                        
+                        <div class="section-header alternative">
+                            <h2>Central de Ajuda</h2>
+                            <p>Encontre respostas rápidas, tutoriais e suporte para todas as funcionalidades do seu painel Web3.</p>
+                        </div>
+                    
+                        <div class="section-container alternative-3">                        
+                            <div class="help-search">
+                                <input type="text" placeholder="Pesquisar por dúvida, recurso ou erro..." />
+                                <button><i class="fas fa-search"></i></button>
+                            </div>
+                            <div class="help-categories">
+                                <div class="category-card">
+                                    <i class="fas fa-book"></i>
+                                    <h3>Documentação</h3>
+                                    <p>Guias completos sobre contratos, integrações e recursos Web3.</p>
+                                </div>
+                                <div class="category-card">
+                                    <i class="fas fa-cogs"></i>
+                                    <h3>Tutoriais</h3>
+                                    <p>Passo a passo para as principais ações do painel.</p>
+                                </div>
+                                <div class="category-card">
+                                    <i class="fas fa-exclamation-triangle"></i>
+                                    <h3>Resolução de Problemas</h3>
+                                    <p>Soluções para erros comuns e dúvidas frequentes.</p>
+                                </div>
+                                <div class="category-card">
+                                    <i class="fas fa-comments"></i>
+                                    <h3>Fale Conosco</h3>
+                                    <p>Abra um chamado ou entre em contato com o suporte.</p>
+                                </div>
+                            </div>
+                            
+                            <div class="contact-container">
+                                <div class="contact-theme">
+                                    <img src="default-images/blockchain_hd.jpg" alt="Contact Theme">
+                                </div>
+                                <div class="contact-form">
+                                    <h3>Precisa de Ajuda Adicional?</h3>
+                                    <p>Entre em contato com nossa equipe de suporte.</p>
+                                    <form>
+                                        <div class="user-data">
+                                            <div class="form-group">
+                                                <label for="name">Nome:</label>
+                                                <input type="text" id="name" name="name" required>
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="role">Cargo:</label>
+                                                <select id="role" name="role" required>
+                                                    <option value="" disabled selected>Selecione seu cargo</option>
+                                                    <option value="admin">Administrador</option>
+                                                    <option value="dev">Desenvolvedor</option>
+                                                    <option value="analista">Analista</option>
+                                                    <option value="user">Usuário</option>
+                                                    <option value="outro">Moderador</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="user-data-2">
+                                            <div class="form-group">
+                                                <label for="email">E-mail:</label>
+                                                <input type="email" id="email" name="email" required>
+                                            </div>
+
+                                            <div class="form-group phone-group">
+                                                <label for="phone">Telefone:</label>
+                                                <div class="phone-fields"> 
+                                                    <div class="custom-operator">             
+                                                        <!-- Exibição da Bandeira Selecionada -->
+                                                        <img src="https://flagcdn.com/ao.svg" alt="Bandeira Selecionada" id="selected-flag" class="selected-flag">
+                                                        <!-- Exibição personalizada do Código Internacional -->
+                                                        <span id="nationCode" class="selected-value"></span>
+                                                    </div>                                  
+
+                                                    <select id="countryCode" name="countryCode" onchange="updateFlag()" required>
+                                                        <option value="+244" data-image="https://flagcdn.com/ao.svg">Angola</option>
+                                                        <option value="+55" data-image="https://flagcdn.com/br.svg">Brasil</option>
+                                                        <option value="+238" data-image="https://flagcdn.com/cv.svg">Cabo Verde</option>
+                                                        <option value="+245" data-image="https://flagcdn.com/gw.svg">Guiné-Bissau</option>
+                                                        <option value="+258" data-image="https://flagcdn.com/mz.svg">Moçambique</option>
+                                                        <option value="+351" data-image="https://flagcdn.com/pt.svg">Portugal</option>
+                                                        <option value="+239" data-image="https://flagcdn.com/st.svg">São Tomé e Príncipe</option>
+                                                        <option value="+670" data-image="https://flagcdn.com/tl.svg">Timor-Leste</option>                                                        
+                                                    </select>                                                    
+                                                    <input type="tel" id="phone" name="phone" placeholder="Nº de telefone" required>
+                                                </div>
+                                            </div>                                        
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label for="subject">Assunto:</label>
+                                            <select id="subject" name="subject" required>
+                                                <option value="" disabled selected>Selecione o assunto</option>
+                                                <option value="duvida">Dúvida</option>
+                                                <option value="suporte">Suporte Técnico</option>
+                                                <option value="sugestao">Sugestão</option>
+                                                <option value="feedback">Feedback</option>
+                                                <option value="outro">Outro</option>
+                                            </select>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="message">Mensagem:</label>
+                                            <textarea id="message" name="message" rows="4" required></textarea>
+                                        </div>
+                                        <button type="submit">Enviar Mensagem</button>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>                       
+                    </section>
+
+
+
+
+
+                    <section class="dynamic-section" id="helpcenter-2" style="display:none;">                        
+                        <div class="section-header">
+                            <h2>F.A.Q - <span id="faq">Perguntas Frequentes</span></h2>
+                        </div>
+
+                        <!-- Container Principal -->
+                        <div class="section-container alternative-3">
+                            <ul class="faq-section">
+                                <li>
+                                    <strong>Como conectar minha carteira?</strong>
+                                    <p>Vá até o menu "Configurações", selecione "Carteiras" e siga o passo a passo apresentado na tela.</p>
+                                </li>
+                                <li>
+                                    <strong>Como visualizar transações recentes?</strong>
+                                    <p>Acesse o painel principal e utilize o filtro de datas para refinar os resultados.</p>
+                                </li>
+                                <li>
+                                    <strong>O que fazer em caso de erro de conexão?</strong>
+                                    <p>Verifique sua conexão de internet e tente novamente. Se o problema persistir, entre em contato pelo suporte.</p>
+                                </li>
+                            </ul>
+                            
+                            <div class="help-feedback">
+                                <span>Este artigo foi útil?</span>
+                                <button class="yes">Sim</button>
+                                <button class="no">Não</button>
+                            </div>
+                        </div>                        
+                    </section>
+
+
+
+
+
+                    <section class="dynamic-section" id="terms" style="display: none;">
+                        <div class="section-header alternative">
+                            <h2>Termos e Condições</h2>
+                            <p>Por favor, leia atentamente os termos de uso da plataforma</p>
+                        </div>
+                    
+                        <div class="section-container terms-container">
+                            <!-- Seção Hero -->
+                            <div class="terms-hero">
+                                <h3>Termos de Uso do Painel Web3</h3>
+                                <p>Este acordo estabelece os termos de condições gerais para uso da nossa plataforma de monitoramento Web3. 
+                                Ao utilizar nossos serviços, você concorda com todas as condições aqui estabelecidas.</p>
+                                
+                                <div class="terms-meta">
+                                    <div class="meta-item">
+                                        <i class="fas fa-calendar-alt"></i>
+                                        <span>Última atualização: 26 de Abril de 2025</span>
+                                    </div>
+                                    <div class="meta-item">
+                                        <i class="fas fa-globe"></i>
+                                        <span>Versão 2.1.0</span>
+                                    </div>
+                                </div>
+                            </div>
+                    
+                            <!-- Navegação Rápida -->
+                            <div class="terms-navigation">
+                                <div class="nav-card active">
+                                    <div class="nav-card-header">
+                                        <i class="fas fa-file-contract"></i>
+                                        <h4>Acordo de Serviço</h4>
+                                    </div>
+                                </div>
+                                <div class="nav-card">
+                                    <div class="nav-card-header">
+                                        <i class="fas fa-user-shield"></i>
+                                        <h4>Responsabilidades</h4>
+                                    </div>
+                                </div>
+                                <div class="nav-card">
+                                    <div class="nav-card-header">
+                                        <i class="fas fa-wallet"></i>
+                                        <h4>Serviços Cripto</h4>
+                                    </div>
+                                </div>
+                                <div class="nav-card">
+                                    <div class="nav-card-header">
+                                        <i class="fas fa-gavel"></i>
+                                        <h4>Limitações</h4>
+                                    </div>
+                                </div>
+                            </div>
+                    
+                            <!-- Seções de Termos -->
+                            <div class="term-section">
+                                <h4>1. Acordo de Serviço</h4>
+                                <div class="term-content">
+                                    <p>Ao acessar e utilizar a Web3-Admin-Dashboard, você concorda em cumprir e estar vinculado aos seguintes termos:</p>
+                                    <ul>
+                                        <li>
+                                            <i class="fas fa-check-circle"></i>
+                                            <span>Você deve ter pelo menos 18 anos ou a idade legal em sua jurisdição para utilizar nossos serviços.</span>
+                                        </li>
+                                        <li>
+                                            <i class="fas fa-check-circle"></i>
+                                            <span>Você é responsável por manter a segurança de suas credenciais de acesso e chaves privadas.</span>
+                                        </li>
+                                        <li>
+                                            <i class="fas fa-check-circle"></i>
+                                            <span>Todas as transações realizadas através da plataforma são irreversíveis e de sua responsabilidade.</span>
+                                        </li>
+                                    </ul>
+                    
+                                    <div class="highlight-box">
+                                        <p><i class="fas fa-exclamation-circle"></i> Importante: Nunca compartilhamos ou solicitamos suas chaves privadas ou frases sementes.</p>
+                                    </div>
+                                </div>
+                            </div>
+                    
+                            <div class="term-section">
+                                <h4>2. Responsabilidades do Usuário</h4>
+                                <div class="term-content">
+                                    <p>Como usuário da plataforma, você concorda em:</p>
+                                    <ul>
+                                        <li>
+                                            <i class="fas fa-check-circle"></i>
+                                            <span>Fornecer informações precisas e atualizadas durante o registro.</span>
+                                        </li>
+                                        <li>
+                                            <i class="fas fa-check-circle"></i>
+                                            <span>Não utilizar a plataforma para atividades ilegais ou não autorizadas.</span>
+                                        </li>
+                                        <li>
+                                            <i class="fas fa-check-circle"></i>
+                                            <span>Manter seus dispositivos e conexões seguros ao acessar a plataforma.</span>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <!-- Serviços Cripto -->
+                            <div class="term-section">
+                                <h4>3. Serviços Cripto</h4>
+                                <div class="term-content">
+                                    <p>Nossa plataforma oferece diversos serviços relacionados a ativos digitais e blockchain:</p>
+                                    <ul>
+                                        <li>
+                                            <i class="fas fa-check-circle"></i>
+                                            <span>
+                                                <strong>Monitoramento de Carteiras:</strong> Acompanhamento em tempo real de saldos e transações em múltiplas redes blockchain.
+                                            </span>
+                                        </li>
+                                        <li>
+                                            <i class="fas fa-check-circle"></i>
+                                            <span>
+                                                <strong>Análise de DeFi:</strong> Rastreamento de yields, pools de liquidez e posições em protocolos DeFi.
+                                            </span>
+                                        </li>
+                                        <li>
+                                            <i class="fas fa-check-circle"></i>
+                                            <span>
+                                                <strong>Gestão de NFTs:</strong> Visualização e gerenciamento de coleções NFT em diferentes marketplaces.
+                                            </span>
+                                        </li>
+                                        <li>
+                                            <i class="fas fa-check-circle"></i>
+                                            <span>
+                                                <strong>Alertas Personalizados:</strong> Notificações configuráveis para movimentações, preços e eventos on-chain.
+                                            </span>
+                                        </li>
+                                    </ul>
+
+                                    <div class="highlight-box">
+                                        <p><i class="fas fa-info-circle"></i> Nota: Os serviços podem variar dependendo da rede blockchain e disponibilidade dos smart contracts.</p>
+                                    </div>
+
+                                    <h5>3.1 Taxas e Custos</h5>
+                                    <ul>
+                                        <li>
+                                            <i class="fas fa-gas-pump"></i>
+                                            <span>Gas fees e taxas de rede são responsabilidade do usuário.</span>
+                                        </li>
+                                        <li>
+                                            <i class="fas fa-percentage"></i>
+                                            <span>Nossa plataforma cobra 0.1% sobre transações DeFi realizadas através de nossos smart contracts.</span>
+                                        </li>
+                                        <li>
+                                            <i class="fas fa-chart-line"></i>
+                                            <span>Funcionalidades premium podem requerer assinatura mensal ou tokens de utilidade.</span>
+                                        </li>
+                                    </ul>
+
+                                    <h5>3.2 Suporte a Redes</h5>
+                                    <ul>
+                                        <li>
+                                            <i class="fab fa-ethereum"></i>
+                                            <span>Ethereum Mainnet e L2s (Arbitrum, Optimism)</span>
+                                        </li>
+                                        <li>
+                                            <i class="fas fa-project-diagram"></i>
+                                            <span>BSC, Polygon, Avalanche, Solana</span>
+                                        </li>
+                                        <li>
+                                            <i class="fas fa-code-branch"></i>
+                                            <span>Novas redes são adicionadas regularmente após auditoria de segurança</span>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <!-- Limitações -->
+                            <div class="term-section">
+                                <h4>4. Limitações</h4>
+                                <div class="term-content">
+                                    <p>É importante entender as limitações de nossos serviços:</p>
+
+                                    <h5>4.1 Limitações de Responsabilidade</h5>
+                                    <ul>
+                                        <li>
+                                            <i class="fas fa-exclamation-triangle"></i>
+                                            <span>Não nos responsabilizamos por perdas financeiras decorrentes de:</span>
+                                        </li>
+                                        <li>
+                                            <i class="fas fa-angle-right"></i>
+                                            <span>Falhas de rede ou congestionamento blockchain</span>
+                                        </li>
+                                        <li>
+                                            <i class="fas fa-angle-right"></i>
+                                            <span>Erros em smart contracts de terceiros</span>
+                                        </li>
+                                        <li>
+                                            <i class="fas fa-angle-right"></i>
+                                            <span>Volatilidade de mercado ou decisões de trading</span>
+                                        </li>
+                                        <li>
+                                            <i class="fas fa-angle-right"></i>
+                                            <span>Comprometimento das chaves privadas do usuário</span>
+                                        </li>
+                                    </ul>
+
+                                    <div class="highlight-box">
+                                        <p><i class="fas fa-shield-alt"></i> Importante: Sempre faça sua própria pesquisa (DYOR) e nunca invista mais do que pode perder.</p>
+                                    </div>
+
+                                    <h5>4.2 Limitações Técnicas</h5>
+                                    <ul>
+                                        <li>
+                                            <i class="fas fa-clock"></i>
+                                            <span>Atualizações de preços podem ter delay de até 5 minutos</span>
+                                        </li>
+                                        <li>
+                                            <i class="fas fa-database"></i>
+                                            <span>Histórico de transações limitado aos últimos 12 meses</span>
+                                        </li>
+                                        <li>
+                                            <i class="fas fa-chart-bar"></i>
+                                            <span>Máximo de 100 carteiras monitoradas por conta</span>
+                                        </li>
+                                        <li>
+                                            <i class="fas fa-bell"></i>
+                                            <span>Limite de 50 alertas ativos simultaneamente</span>
+                                        </li>
+                                    </ul>
+
+                                    <h5>4.3 Restrições Geográficas</h5>
+                                    <ul>
+                                        <li>
+                                            <i class="fas fa-globe"></i>
+                                            <span>Alguns serviços podem não estar disponíveis em determinadas jurisdições devido a regulamentações locais.</span>
+                                        </li>
+                                        <li>
+                                            <i class="fas fa-gavel"></i>
+                                            <span>Usuários são responsáveis por verificar a legalidade dos serviços em sua região.</span>
+                                        </li>
+                                    </ul>
+
+                                    <div class="highlight-box">
+                                        <p><i class="fas fa-hard-hat"></i> Aviso: Nossa plataforma está em constante evolução. Recursos podem ser adicionados ou removidos para manter conformidade regulatória.</p>
+                                    </div>
+                                </div>
+                            </div>
+                    
+                            <!-- Rodapé dos Termos -->
+                            <div class="terms-footer">
+                                <h4>Aceite dos Termos</h4>
+                                <p>Ao clicar em "Aceitar", você confirma que leu e concorda com nossos Termos e Condições.</p>
+                                
+                                <div class="terms-actions">
+                                    <button class="action-btn primary">
+                                        <i class="fas fa-check"></i>
+                                        <span>Aceitar Termos</span>
+                                    </button>
+                                    <button class="action-btn secondary">
+                                        <i class="fas fa-download"></i>
+                                        <span>Baixar PDF</span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+
+
+
+                    <section class="dynamic-section" id="privacy" style="display: none;">
+                        <div class="section-header alternative">
+                            <h2>Política de Privacidade</h2>
+                            <p>Seu direito à privacidade é nossa prioridade</p>
+                        </div>
+                    
+                        <div class="section-container privacy-container">
+                            <!-- Introdução -->
+                            <div class="privacy-intro">
+                                <h3>Compromisso com Sua Privacidade</h3>
+                                <p>Na Web3-Admin-Dashboard, levamos a sério a proteção dos seus dados pessoais e ativos digitais. <br>
+                                Nossa política de privacidade foi desenvolvida para garantir transparência total sobre como coletamos, 
+                                processamos e protegemos suas informações.</p>
+                                <div class="privacy-last-updated">
+                                    <i class="fas fa-clock"></i>
+                                    <span>Última atualização: 26 de Abril de 2025</span>
+                                </div>
+                            </div>
+                    
+                            <!-- Seções Principais -->
+                            <div class="privacy-sections">
+                                <!-- Coleta de Dados -->
+                                <div class="privacy-card">
+                                    <div class="privacy-card-header">
+                                        <i class="fas fa-database"></i>
+                                        <h4>Coleta de Dados</h4>
+                                    </div>
+                                    <div class="privacy-card-content">
+                                        <p>Coletamos apenas as informações necessárias para:</p>
+                                        <ul>
+                                            <li><i class="fas fa-check"></i> Autenticação segura de carteira</li>
+                                            <li><i class="fas fa-check"></i> Monitoramento de transações</li>
+                                            <li><i class="fas fa-check"></i> Personalização da experiência</li>
+                                            <li><i class="fas fa-check"></i> Conformidade regulatória</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                    
+                                <!-- Uso de Dados -->
+                                <div class="privacy-card">
+                                    <div class="privacy-card-header">
+                                        <i class="fas fa-shield-alt"></i>
+                                        <h4>Proteção de Dados</h4>
+                                    </div>
+                                    <div class="privacy-card-content">
+                                        <p>Suas informações são protegidas por:</p>
+                                        <ul>
+                                            <li><i class="fas fa-check"></i> Criptografia de ponta a ponta</li>
+                                            <li><i class="fas fa-check"></i> Armazenamento seguro</li>
+                                            <li><i class="fas fa-check"></i> Autenticação multi-fator</li>
+                                            <li><i class="fas fa-check"></i> Monitoramento 24/7</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                    
+                                <!-- Seus Direitos -->
+                                <div class="privacy-card">
+                                    <div class="privacy-card-header">
+                                        <i class="fas fa-user-shield"></i>
+                                        <h4>Seus Direitos</h4>
+                                    </div>
+                                    <div class="privacy-card-content">
+                                        <p>Você tem direito a:</p>
+                                        <ul>
+                                            <li><i class="fas fa-check"></i> Acessar seus dados</li>
+                                            <li><i class="fas fa-check"></i> Solicitar exclusão</li>
+                                            <li><i class="fas fa-check"></i> Corrigir informações</li>
+                                            <li><i class="fas fa-check"></i> Exportar dados</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                    
+                                <!-- Cookies -->
+                                <div class="privacy-card">
+                                    <div class="privacy-card-header">
+                                        <i class="fas fa-cookie-bite"></i>
+                                        <h4>Cookies</h4>
+                                    </div>
+                                    <div class="privacy-card-content">
+                                        <p>Utilizamos cookies para:</p>
+                                        <ul>
+                                            <li><i class="fas fa-check"></i> Melhorar a navegação</li>
+                                            <li><i class="fas fa-check"></i> Lembrar preferências</li>
+                                            <li><i class="fas fa-check"></i> Análise de desempenho</li>
+                                            <li><i class="fas fa-check"></i> Segurança da sessão</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                    
+                                <!-- Compartilhamento -->
+                                <div class="privacy-card">
+                                    <div class="privacy-card-header">
+                                        <i class="fas fa-share-alt"></i>
+                                        <h4>Compartilhamento</h4>
+                                    </div>
+                                    <div class="privacy-card-content">
+                                        <p>Seus dados nunca serão:</p>
+                                        <ul>
+                                            <li><i class="fas fa-times"></i> Vendidos a terceiros</li>
+                                            <li><i class="fas fa-times"></i> Usados para marketing</li>
+                                            <li><i class="fas fa-times"></i> Compartilhados sem permissão</li>
+                                            <li><i class="fas fa-check"></i> Usados apenas conforme necessário</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                    
+                                <!-- Segurança -->
+                                <div class="privacy-card">
+                                    <div class="privacy-card-header">
+                                        <i class="fas fa-lock"></i>
+                                        <h4>Segurança</h4>
+                                    </div>
+                                    <div class="privacy-card-content">
+                                        <p>Medidas de segurança incluem:</p>
+                                        <ul>
+                                            <li><i class="fas fa-check"></i> Firewall avançado</li>
+                                            <li><i class="fas fa-check"></i> Backups regulares</li>
+                                            <li><i class="fas fa-check"></i> Auditorias de segurança</li>
+                                            <li><i class="fas fa-check"></i> Equipe dedicada</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                    
+                            <!-- Rodapé -->
+                            <div class="privacy-footer">
+                                <h4>Precisa de Mais Informações?</h4>
+                                <p>Entre em contato com nossa equipe de privacidade para esclarecimentos adicionais</p>
+                                <div class="privacy-contact">
+                                    <div class="contact-method">
+                                        <i class="fas fa-envelope"></i>
+                                        <span>web3panel@digitalblessing.net</span>
+                                    </div>
+                                    <div class="contact-method">
+                                        <i class="fas fa-headset"></i>
+                                        <span>Suporte 24/7</span>
+                                    </div>
+                                    <div class="contact-method">
+                                        <i class="fas fa-file-alt"></i>
+                                        <span>Solicitar Dados</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+
+
+
+                    
+                    <section id="about" style="display: none;">
+                        <!-- Área Superior (70%) -->
+                        <div class="about-hero">
+                            <div class="hero-content">
+                                <div class="hero-text">
+                                    <div class="live-status">
+                                        <div class="status-dot"></div>
+                                        <span class="status-text">Sistema Operacional</span>
+                                    </div>
+                                    
+                                    <h1>Web3-Admin-Dashboard</h1>
+                                    <p>Plataforma avançada de monitoramento e gestão de ativos digitais, 
+                                    fornecendo soluções robustas e seguras para o ecossistema Web3. 
+                                    Nossa infraestrutura oferece monitoramento em tempo real e segurança 
+                                    máxima para seus investimentos digitais.</p>
+                
+                                    <div class="hero-metrics">
+                                        <div class="metric-card">
+                                            <div class="metric-value">99.99%</div>
+                                            <div class="metric-label">Uptime</div>
+                                        </div>
+                                        <div class="metric-card">
+                                            <div class="metric-value">15+</div>
+                                            <div class="metric-label">Redes Suportadas</div>
+                                        </div>
+                                        <div class="metric-card">
+                                            <div class="metric-value">24/7</div>
+                                            <div class="metric-label">Monitoramento</div>
+                                        </div>
+                                    </div>
+                                </div>
+                
+                                <div class="hero-visual">
+                                    <!-- Aqui você pode adicionar uma visualização técnica em canvas -->
+                                    <canvas id="networkVisualization"></canvas>
+                                </div>
+                            </div>
+                        </div>
+                
+                        <!-- Área Inferior (30%) -->
+                        <div class="about-info">
+                            <!-- Card Flutuante de Status -->
+                            <div class="system-status-card">
+                                <div class="status-grid">
+                                    <div class="status-item">
+                                        <div class="status-icon">
+                                            <i class="fas fa-user"></i>
+                                        </div>
+                                        <div class="status-text">
+                                            <h4>Usuário Atual</h4>
+                                            <p>Ben-FullstackDEV</p>
+                                        </div>
+                                    </div>
+                                    <div class="status-item">
+                                        <div class="status-icon">
+                                            <i class="fas fa-clock"></i>
+                                        </div>
+                                        <div class="status-text">
+                                            <h4>Horário UTC</h4>
+                                            <p>2025-04-26 16:08:18</p>
+                                        </div>
+                                    </div>
+                                    <div class="status-item">
+                                        <div class="status-icon">
+                                            <i class="fas fa-server"></i>
+                                        </div>
+                                        <div class="status-text">
+                                            <h4>Latência API</h4>
+                                            <p>45ms</p>
+                                        </div>
+                                    </div>
+                                    <div class="status-item">
+                                        <div class="status-icon">
+                                            <i class="fas fa-code-branch"></i>
+                                        </div>
+                                        <div class="status-text">
+                                            <h4>Versão</h4>
+                                            <p>2.1.0 Build 2025.04</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                
+                            <!-- Grid de Recursos -->
+                            <div class="resources-grid">
+                                <div class="resource-card">
+                                    <div class="resource-header">
+                                        <i class="fas fa-shield-alt"></i>
+                                        <h3>Segurança</h3>
+                                    </div>
+                                    <div class="resource-content">
+                                        <p>Proteção avançada com criptografia de nível militar e autenticação multi-fator.</p>
+                                    </div>
+                                </div>
+                
+                                <div class="resource-card">
+                                    <div class="resource-header">
+                                        <i class="fas fa-chart-line"></i>
+                                        <h3>Analytics</h3>
+                                    </div>
+                                    <div class="resource-content">
+                                        <p>Monitoramento em tempo real com métricas detalhadas e alertas personalizáveis.</p>
+                                    </div>
+                                </div>
+                
+                                <div class="resource-card">
+                                    <div class="resource-header">
+                                        <i class="fas fa-code"></i>
+                                        <h3>API</h3>
+                                    </div>
+                                    <div class="resource-content">
+                                        <p>APIs robustas e documentadas para integração com sistemas existentes.</p>
+                                    </div>
+                                </div>
+                
+                                <div class="resource-card">
+                                    <div class="resource-header">
+                                        <i class="fas fa-headset"></i>
+                                        <h3>Suporte</h3>
+                                    </div>
+                                    <div class="resource-content">
+                                        <p>Equipe especializada disponível 24/7 para assistência técnica.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+
+
+
+                    <!-------------------------------------------------------------------------------------------------------
+                        C O N T E Ú D O   P Ó S - C O N E X Ã O   D O   P A I N E L
+                    -------------------------------------------------------------------------------------------------------->
 
                     <!----
                     █▀▀█ █▀▀ █▀▀█ █▀▀ ░▀░ █░░   █▀▀▄ █▀▀█   █▀▀█ █▀▀▄ █▀▄▀█
@@ -426,7 +1427,7 @@
                     █▀▀▀ ▀▀▀ ▀░▀▀ ▀░░ ▀▀▀ ▀▀▀   ▀▀▀░ ▀▀▀▀   ▀░░▀ ▀▀▀░ ▀░░░▀
                     ----->
             
-                    <section class="dynamic-section" id="content1" style="display: block;">
+                    <section class="dynamic-section" id="content1" style="display: none;">
                     
                         <div class="section-header">
                             <h2>Perfil do Administrador</h2>
@@ -1844,7 +2845,7 @@
 
 
 
-<!----
+                    <!----
                         <div class="section-container source-code-layout">
                             <div class="code-sidebar">
                                 <div class="project-selector">
@@ -1879,7 +2880,7 @@
 
                             <div class="code-content"></div>
                         </div>
----->
+                    ---->
 
 
 
@@ -3096,491 +4097,9 @@
                             </div>
                         </div>
                     </section>
-                        
-
-
-
-
-
-
-                    <!---- 
-                        ▀▀█▀▀ █▀▀ █▀▀ █▀▀▄ █▀▀█ █░░ █▀▀█ █▀▀▀ ░▀░ █▀▀█ █▀▀
-                        ░░█░░ █▀▀ █░░ █░░█ █░░█ █░░ █░░█ █░▀█ ▀█▀ █▄▄█ ▀▀█
-                        ░░▀░░ ▀▀▀ ▀▀▀ ▀░░▀ ▀▀▀▀ ▀▀▀ ▀▀▀▀ ▀▀▀▀ ▀▀▀ ▀░░▀ ▀▀▀
-                    ----->
-                    
-                    <section class="dynamic-section" id="content13" style="display:none;">                        
-                        <div class="section-header alternative">
-                            <h2>Tecnologias</h2>
-                            <p>Explore as tecnologias blockchain mais recentes</p>
-                        </div>
-
-                        <!-- Container Principal -->
-                        <div class="section-container" id="tech-layout">
-
-                            <!-- Container Superior -->
-                            <div class="tech-tabs-container">
-                                <!-- Navegação dos Separadores -->
-                                <div class="tech-tabs-nav">
-                                    <button class="tech-tab active" data-tab="blockchain">
-                                        Blockchain
-                                    </button>
-                                    <button class="tech-tab" data-tab="web3">
-                                        Web3
-                                    </button>
-                                    <button class="tech-tab" data-tab="defi">
-                                        DeFi
-                                    </button>
-                                    <button class="tech-tab" data-tab="nft">
-                                        NFTs
-                                    </button>
-                                </div>
-                        
-                                <!-- Conteúdo dos Separadores -->
-                                <!-- Blockchain Tab -->
-                                <div class="tech-tab-content active" id="blockchain">
-                                    <div class="tech-carousel">
-                                        <button class="carousel-btn prev">
-                                            <i class="fas fa-chevron-left"></i>
-                                        </button>
-                                        
-                                        <div class="carousel-container">
-                                            <div class="carousel-track">
-                                                <div class="tech-card" data-tech="solidity">
-                                                    <img src="tech-logos/solidity.png" alt="Solidity">
-                                                    <h4>Solidity</h4>
-                                                </div>
-                                                <div class="tech-card" data-tech="hardhat">
-                                                    <img src="tech-logos/hardhat.png" alt="Hardhat">
-                                                    <h4>Hardhat</h4>
-                                                </div>
-                                                <div class="tech-card" data-tech="truffle">
-                                                    <img src="tech-logos/truffle.png" alt="Truffle">
-                                                    <h4>Truffle</h4>
-                                                </div>
-                                                <div class="tech-card" data-tech="web3js">
-                                                    <img src="tech-logos/web3js.png" alt="Web3.js">
-                                                    <h4>Web3.js</h4>
-                                                </div>
-                                                <div class="tech-card" data-tech="ethers">
-                                                    <img src="tech-logos/ethers.png" alt="Ethers.js">
-                                                    <h4>Ethers.js</h4>
-                                                </div>
-                                                <div class="tech-card" data-tech="remix">
-                                                    <img src="tech-logos/remix.png" alt="Remix IDE">
-                                                    <h4>Remix IDE</h4>
-                                                </div>
-                                                <div class="tech-card" data-tech="ganache">
-                                                    <img src="tech-logos/ganache.png" alt="Ganache">
-                                                    <h4>Ganache</h4>
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                        <button class="carousel-btn next">
-                                            <i class="fas fa-chevron-right"></i>
-                                        </button>
-                                    </div>
-                                </div>
-                                            
-                                <!-- Web3 Tab -->
-                                <div class="tech-tab-content" id="web3">
-                                    <div class="tech-carousel">
-                                        <button class="carousel-btn prev">
-                                            <i class="fas fa-chevron-left"></i>
-                                        </button>
-                                        <div class="carousel-container">
-                                            <div class="carousel-track">
-                                                <div class="tech-card" data-tech="metamask">
-                                                    <img src="tech-logos/metamask.png" alt="MetaMask">
-                                                    <h4>MetaMask</h4>
-                                                </div>
-                                                <div class="tech-card" data-tech="ipfs">
-                                                    <img src="tech-logos/ipfs.png" alt="IPFS">
-                                                    <h4>IPFS</h4>
-                                                </div>
-                                                <div class="tech-card" data-tech="thegraph">
-                                                    <img src="tech-logos/thegraph.png" alt="The Graph">
-                                                    <h4>The Graph</h4>
-                                                </div>
-                                                <div class="tech-card" data-tech="infura">
-                                                    <img src="tech-logos/infura.png" alt="Infura">
-                                                    <h4>Infura</h4>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <button class="carousel-btn next">
-                                            <i class="fas fa-chevron-right"></i>
-                                        </button>
-                                    </div>
-                                </div>
-                        
-                                <!-- DeFi Tab -->
-                                <div class="tech-tab-content" id="defi">
-                                    <div class="tech-carousel">
-                                        <button class="carousel-btn prev">
-                                            <i class="fas fa-chevron-left"></i>
-                                        </button>
-                                        <div class="carousel-container">
-                                            <div class="carousel-track">
-                                                <div class="tech-card" data-tech="uniswap">
-                                                    <img src="tech-logos/uniswap.png" alt="Uniswap">
-                                                    <h4>Uniswap</h4>
-                                                </div>
-                                                <div class="tech-card" data-tech="aave">
-                                                    <img src="tech-logos/aave.png" alt="Aave">
-                                                    <h4>Aave</h4>
-                                                </div>
-                                                <div class="tech-card" data-tech="compound">
-                                                    <img src="tech-logos/compound.png" alt="Compound">
-                                                    <h4>Compound</h4>
-                                                </div>
-                                                <div class="tech-card" data-tech="makerdao">
-                                                    <img src="tech-logos/makerdao.png" alt="MakerDAO">
-                                                    <h4>MakerDAO</h4>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <button class="carousel-btn next">
-                                            <i class="fas fa-chevron-right"></i>
-                                        </button>
-                                    </div>
-                                </div>
-                        
-                                <!-- NFT Tab -->
-                                <div class="tech-tab-content" id="nft">
-                                    <div class="tech-carousel">
-                                        <button class="carousel-btn prev">
-                                            <i class="fas fa-chevron-left"></i>
-                                        </button>
-                                        <div class="carousel-container">
-                                            <div class="carousel-track">
-                                                <div class="tech-card" data-tech="opensea">
-                                                    <img src="tech-logos/opensea.png" alt="OpenSea">
-                                                    <h4>OpenSea</h4>
-                                                </div>
-                                                <div class="tech-card" data-tech="rarible">
-                                                    <img src="tech-logos/rarible.png" alt="Rarible">
-                                                    <h4>Rarible</h4>
-                                                </div>
-                                                <div class="tech-card" data-tech="erc721">
-                                                    <img src="tech-logos/erc721.png" alt="ERC-721">
-                                                    <h4>ERC-721</h4>
-                                                </div>
-                                                <div class="tech-card" data-tech="ipfs-nft">
-                                                    <img src="tech-logos/ipfs-nft.png" alt="IPFS NFT Storage">
-                                                    <h4>IPFS NFT Storage</h4>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <button class="carousel-btn next">
-                                            <i class="fas fa-chevron-right"></i>
-                                        </button>
-                                    </div>
-                                </div>
-                            </div>
-
-                        
-                            <!-- Container Inferior -->
-                            <div class="tech-description">
-                                <!-- Descrição Blockchain -->
-                                <div class="description-content active" id="blockchain-desc">
-                                    <h3>Ferramentas de Desenvolvimento Blockchain</h3>
-                                    <div class="tech-grid">
-                                        <div class="tech-item" id="tech-solidity">
-                                            <h4>Solidity</h4>
-                                            <p>Linguagem de programação orientada a contratos para desenvolvimento de smart contracts na rede Ethereum.</p>
-                                        </div>
-                                        <div class="tech-item" id="tech-hardhat">
-                                            <h4>Hardhat</h4>
-                                            <p>Ambiente de desenvolvimento profissional para Ethereum, fornecendo ferramentas para debugging, testes e implantação.</p>
-                                        </div>
-                                        <div class="tech-item" id="tech-truffle">
-                                            <h4>Truffle Suite</h4>
-                                            <p>Framework completo para desenvolvimento de DApps, incluindo compilação, linkagem e gerenciamento de binários.</p>
-                                        </div>
-                                        <div class="tech-item" id="tech-web3js">
-                                            <h4>Web3.js</h4>
-                                            <p>Biblioteca que permite interagir com nós Ethereum locais ou remotos usando HTTP, IPC ou WebSocket.</p>
-                                        </div>
-                                        <div class="tech-item" id="tech-ethers">
-                                            <h4>Ethers.js</h4>
-                                            <p>Biblioteca JavaScript moderna e completa para interagir com a blockchain Ethereum, oferecendo uma API mais intuitiva e recursos avançados de gerenciamento de carteiras.</p>
-                                        </div>
-                                        <div class="tech-item" id="tech-remix">
-                                            <h4>Remix IDE</h4>
-                                            <p>IDE baseada em navegador para desenvolvimento Ethereum, oferecendo um ambiente integrado para escrita, teste e depuração de smart contracts com interface amigável.</p>
-                                        </div>
-                                        <div class="tech-item" id="tech-ganache">
-                                            <h4>Ganache</h4>
-                                            <p>Blockchain Ethereum pessoal para desenvolvimento, permitindo implantar contratos, desenvolver aplicações e executar testes em um ambiente controlado.</p>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <!-- Descrição Web3 -->
-                                <div class="description-content" id="web3-desc">
-                                    <h3>Tecnologias Web3</h3>
-                                    <div class="tech-grid">
-                                        <div class="tech-item" id="tech-metamask">
-                                            <h4>MetaMask</h4>
-                                            <p>Carteira cripto e gateway para aplicações Web3, permitindo interações com DApps.</p>
-                                        </div>
-                                        <div class="tech-item" id="tech-ipfs">
-                                            <h4>IPFS</h4>
-                                            <p>Sistema de arquivos distribuído para armazenamento e acesso descentralizado de dados.</p>
-                                        </div>
-                                        <div class="tech-item" id="tech-thegraph">
-                                            <h4>The Graph</h4>
-                                            <p>Protocolo de indexação para consulta eficiente de dados blockchain.</p>
-                                        </div>
-                                        <div class="tech-item" id="tech-infura">
-                                            <h4>Infura</h4>
-                                            <p>Infraestrutura escalável para acesso a redes blockchain e desenvolvimento de DApps.</p>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <!-- Descrição DeFi -->
-                                <div class="description-content" id="defi-desc">
-                                    <h3>Protocolos DeFi</h3>
-                                    <div class="tech-grid">
-                                        <div class="tech-item" id="tech-uniswap">
-                                            <h4>Uniswap</h4>
-                                            <p>Protocolo líder em exchanges descentralizadas usando o modelo AMM.</p>
-                                        </div>
-                                        <div class="tech-item" id="tech-aave">
-                                            <h4>Aave</h4>
-                                            <p>Protocolo de empréstimo descentralizado com taxas de juros dinâmicas.</p>
-                                        </div>
-                                        <div class="tech-item" id="tech-compound">
-                                            <h4>Compound</h4>
-                                            <p>Mercado monetário algorítmico e autônomo para criptoativos.</p>
-                                        </div>
-                                        <div class="tech-item" id="tech-makerdao">
-                                            <h4>MakerDAO</h4>
-                                            <p>Protocolo de empréstimo colateralizado e emissão da stablecoin DAI.</p>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <!-- Descrição NFTs -->
-                                <div class="description-content" id="nft-desc">
-                                    <h3>Ecossistema NFT</h3>
-                                    <div class="tech-grid">
-                                        <div class="tech-item" id="tech-opensea">
-                                            <h4>OpenSea</h4>
-                                            <p>Maior marketplace de NFTs com suporte a múltiplas blockchains.</p>
-                                        </div>
-                                        <div class="tech-item" id="tech-rarible">
-                                            <h4>Rarible</h4>
-                                            <p>Plataforma comunitária para criação e comercialização de NFTs.</p>
-                                        </div>
-                                        <div class="tech-item" id="tech-erc721">
-                                            <h4>ERC-721</h4>
-                                            <p>Padrão técnico para tokens não fungíveis na rede Ethereum.</p>
-                                        </div>
-                                        <div class="tech-item" id="tech-ipfs-nft">
-                                            <h4>IPFS NFT Storage</h4>
-                                            <p>Solução de armazenamento descentralizado otimizada para metadados de NFTs.</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                        </div>                        
-                    </section>
-
-
-
-
-
-
-
-
-
-
-
-                    <section class="dynamic-section" id="helpcenter1" style="display:none;">                        
-                        <div class="section-header alternative">
-                            <h2>Central de Ajuda</h2>
-                            <p>Encontre respostas rápidas, tutoriais e suporte para todas as funcionalidades do seu painel Web3.</p>
-                        </div>
-                    
-                        <div class="section-container alternative-3">                        
-                            <div class="help-search">
-                                <input type="text" placeholder="Pesquisar por dúvida, recurso ou erro..." />
-                                <button><i class="fas fa-search"></i></button>
-                            </div>
-                            <div class="help-categories">
-                                <div class="category-card">
-                                    <i class="fas fa-book"></i>
-                                    <h3>Documentação</h3>
-                                    <p>Guias completos sobre contratos, integrações e recursos Web3.</p>
-                                </div>
-                                <div class="category-card">
-                                    <i class="fas fa-cogs"></i>
-                                    <h3>Tutoriais</h3>
-                                    <p>Passo a passo para as principais ações do painel.</p>
-                                </div>
-                                <div class="category-card">
-                                    <i class="fas fa-exclamation-triangle"></i>
-                                    <h3>Resolução de Problemas</h3>
-                                    <p>Soluções para erros comuns e dúvidas frequentes.</p>
-                                </div>
-                                <div class="category-card">
-                                    <i class="fas fa-comments"></i>
-                                    <h3>Fale Conosco</h3>
-                                    <p>Abra um chamado ou entre em contato com o suporte.</p>
-                                </div>
-                            </div>
-                            
-                            <div class="contact-container">
-                                <div class="contact-theme">
-                                    <img src="default-images/blockchain_hd.jpg" alt="Contact Theme">
-                                </div>
-                                <div class="contact-form">
-                                    <h3>Precisa de Ajuda Adicional?</h3>
-                                    <p>Entre em contato com nossa equipe de suporte.</p>
-                                    <form>
-                                        <div class="user-data">
-                                            <div class="form-group">
-                                                <label for="name">Nome:</label>
-                                                <input type="text" id="name" name="name" required>
-                                            </div>
-                                            <div class="form-group">
-                                                <label for="role">Cargo:</label>
-                                                <select id="role" name="role" required>
-                                                    <option value="" disabled selected>Selecione seu cargo</option>
-                                                    <option value="admin">Administrador</option>
-                                                    <option value="dev">Desenvolvedor</option>
-                                                    <option value="analista">Analista</option>
-                                                    <option value="user">Usuário</option>
-                                                    <option value="outro">Moderador</option>
-                                                </select>
-                                            </div>
-                                        </div>
-                                        
-                                        <div class="user-data-2">
-                                            <div class="form-group">
-                                                <label for="email">E-mail:</label>
-                                                <input type="email" id="email" name="email" required>
-                                            </div>
-
-                                            <div class="form-group phone-group">
-                                                <label for="phone">Telefone:</label>
-                                                <div class="phone-fields"> 
-                                                    <div class="custom-operator">             
-                                                        <!-- Exibição da Bandeira Selecionada -->
-                                                        <img src="https://flagcdn.com/ao.svg" alt="Bandeira Selecionada" id="selected-flag" class="selected-flag">
-                                                        <!-- Exibição personalizada do Código Internacional -->
-                                                        <span id="nationCode" class="selected-value"></span>
-                                                    </div>                                  
-
-                                                    <select id="countryCode" name="countryCode" onchange="updateFlag()" required>
-                                                        <option value="+244" data-image="https://flagcdn.com/ao.svg">Angola</option>
-                                                        <option value="+55" data-image="https://flagcdn.com/br.svg">Brasil</option>
-                                                        <option value="+238" data-image="https://flagcdn.com/cv.svg">Cabo Verde</option>
-                                                        <option value="+245" data-image="https://flagcdn.com/gw.svg">Guiné-Bissau</option>
-                                                        <option value="+258" data-image="https://flagcdn.com/mz.svg">Moçambique</option>
-                                                        <option value="+351" data-image="https://flagcdn.com/pt.svg">Portugal</option>
-                                                        <option value="+239" data-image="https://flagcdn.com/st.svg">São Tomé e Príncipe</option>
-                                                        <option value="+670" data-image="https://flagcdn.com/tl.svg">Timor-Leste</option>                                                        
-                                                    </select>                                                    
-                                                    <input type="tel" id="phone" name="phone" placeholder="Nº de telefone" required>
-                                                </div>
-                                            </div>                                        
-                                        </div>
-
-                                        <div class="form-group">
-                                            <label for="subject">Assunto:</label>
-                                            <select id="subject" name="subject" required>
-                                                <option value="" disabled selected>Selecione o assunto</option>
-                                                <option value="duvida">Dúvida</option>
-                                                <option value="suporte">Suporte Técnico</option>
-                                                <option value="sugestao">Sugestão</option>
-                                                <option value="feedback">Feedback</option>
-                                                <option value="outro">Outro</option>
-                                            </select>
-                                        </div>
-                                        <div class="form-group">
-                                            <label for="message">Mensagem:</label>
-                                            <textarea id="message" name="message" rows="4" required></textarea>
-                                        </div>
-                                        <button type="submit">Enviar Mensagem</button>
-                                    </form>
-                                </div>
-                            </div>
-                        </div>                       
-                    </section>
-
-
-
-
-
-
-                    <section class="dynamic-section" id="helpcenter2" style="display:none;">                        
-                        <div class="section-header">
-                            <h2>F.A.Q - <span id="faq">Perguntas Frequentes</span></h2>
-                        </div>
-
-                        <!-- Container Principal -->
-                        <div class="section-container alternative-3">
-                            <ul class="faq-section">
-                                <li>
-                                    <strong>Como conectar minha carteira?</strong>
-                                    <p>Vá até o menu "Configurações", selecione "Carteiras" e siga o passo a passo apresentado na tela.</p>
-                                </li>
-                                <li>
-                                    <strong>Como visualizar transações recentes?</strong>
-                                    <p>Acesse o painel principal e utilize o filtro de datas para refinar os resultados.</p>
-                                </li>
-                                <li>
-                                    <strong>O que fazer em caso de erro de conexão?</strong>
-                                    <p>Verifique sua conexão de internet e tente novamente. Se o problema persistir, entre em contato pelo suporte.</p>
-                                </li>
-                            </ul>
-                            
-                            <div class="help-feedback">
-                                <span>Este artigo foi útil?</span>
-                                <button class="yes">Sim</button>
-                                <button class="no">Não</button>
-                            </div>
-                        </div>                        
-                    </section>
-
-
-
-
-
-                    <section class="dynamic-section" id="helpcenter3" style="display:none;">                        
-                        <div class="section-header">
-                            <h2>Política de Privacidade</h2>
-                        </div>
-
-                        <!-- Container Principal -->
-                        <div class="section-container">
-                        </div>                        
-                    </section>
-
-
-
-
-
-
-
-                    <section class="dynamic-section" id="about" style="display:none;">                        
-                        <div class="section-header">
-                            <h2>Sobre</h2>
-                        </div>
-
-                        <!-- Container Principal -->
-                        <div class="section-container">
-                        </div>                        
-                    </section>
-
 
                 </div>
+
             </div>
         </section>
     </main>
