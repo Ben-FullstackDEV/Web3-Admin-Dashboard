@@ -286,20 +286,18 @@ body {
     width: 100%;
     height: 100%;
 }
-.left-column, .right-column {
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    flex-direction: column;
-    overflow: hidden;       /* Garante também que o "overlay" na coluna direita não vaze */
-}
 
 
 /*-------------------------------------------------------------------------
     Configuração da Coluna ESQUERDA             
 -------------------------------------------------------------------------*/
 
-.left-column {
+.left-column{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+    overflow: hidden;       /* Garante também que o "overlay" na coluna direita não vaze */
     width: 23%;
     height: 100vh;
     padding-top: 93px;
@@ -319,15 +317,8 @@ body {
     transition: left 1s;
     z-index: 9;
 }
-
 #x-column.active {
     left: 0;
-}
-
-#default-content, 
-#menu-content {
-    width: 100%;
-    transition: width 1.5s ease;
 }
 
 /* Botão de logout */
@@ -337,7 +328,6 @@ body {
     justify-content: center;
     align-items: center;
 }
-
 .logout button {
     display: flex;
     align-items: center;
@@ -378,7 +368,8 @@ nav ul {
     margin: 0;
     flex-grow: 1;
 }
-nav ul:nth-of-type(1) {
+
+.offline-items:nth-of-type(2) {
     margin-bottom: 45px;
 }
 
@@ -416,9 +407,8 @@ nav > ul > li > .item-content i {
 }
 
 /* Estados hover e ativos */
-nav li:hover,
-nav li.defaultActive:hover {
-    background-color: #ffffff !important;
+nav li:hover {
+    background-image: linear-gradient(#fff, #fff) !important;
     color: #000000;
 }
 
@@ -426,23 +416,21 @@ nav li:hover i {
     color: #000000;
 }
 
-#home,
+nav li.defaultActive,
 nav li.active {
-    background-image: linear-gradient(210deg, #3839e1 15%, #000000 51%, #3839e1 92%);
-    color: #ffffff !important;
+    background-image: linear-gradient(210deg, #3839e1 15%, #000000 51%, #3839e1 92%) !important;
     font-weight: 600;
-    border-left-color: #ffffff;
 }
-
-nav li.defaultActive {
-    background: none !important;
+nav li.defaultActive,
+nav li.defaultActive i {
+    color: #ffff00 !important;
+    border-left-color: #ffff00;
 }
-
-#home.active i,
+nav li.active,
 nav li.active i {
     color: #ffffff !important;
+    border-left-color: #ffffff;
 }
-
 
 
 /* Estilos do submenu */
@@ -477,12 +465,14 @@ nav .submenu li:hover {
 }
 
 /* Mostra submenu quando li pai está ativo */
+nav li.defaultActive > .submenu,
 nav li.active > .submenu {
     display: block;
     animation: slideDown 0.3s ease-out;
     margin-bottom: 0 !important;
 }
 
+nav .submenu li.defaultActive,
 nav .submenu li.active {
     background: #ffffffa4 !important;
     border-left-color: #3839E1;
@@ -492,6 +482,8 @@ nav .submenu li i {
     color: #000000 !important;
 }
 nav .submenu li:hover i,
+nav .submenu li.defaultActive,
+nav .submenu li.defaultActive i,
 nav .submenu li.active,
 nav .submenu li.active i {
     color: #3839E1 !important;
@@ -522,6 +514,7 @@ nav > ul > li:has(.submenu)::after {
 }
 
 /* Rotação do indicador quando ativo */
+nav > ul > li.defaultActive:has(.submenu)::after,
 nav > ul > li.active:has(.submenu)::after {
     transform: rotate(180deg);
 }
@@ -530,18 +523,24 @@ nav > ul > li.active:has(.submenu)::after {
 
 
 /*-------------------------------------------------------------------------
-    Configuração da Coluna DIREITA  |  Padrão            
+    LAYOUT PADRÃO DO PAINEL          
 -------------------------------------------------------------------------*/
 
-.right-column {
+#default-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
     background-image: url("default-images/blockchain_hd.jpg");
     background-repeat: no-repeat;
     background-size: cover;
-    background-position: center;
+    background-position: center;    
+    overflow: hidden;       /* Garante também que o "overlay" na coluna direita não vaze */
     position: relative;     /* Importante para o posicionamento do overlay */
     min-height: 100vh;
 }  
-.right-column::before {
+
+#default-content::before {
     content: ""; /* Obrigatório para pseudo-elementos */
     position: absolute;
     top: 0;
@@ -554,7 +553,7 @@ nav > ul > li.active:has(.submenu)::after {
 }
   
 /* Estilos adicionais para o conteúdo da div (opcional) */
-.right-column > * {
+#default-content > * {
     position: relative;
     z-index: 3; /* Garante que o conteúdo fique acima do overlay */
 }  
@@ -699,18 +698,19 @@ hr {
 
 
 /*-------------------------------------------------------------------------
-    Configuração da Coluna DIREITA  |  Pós-Conexão             
+    Configuração da Coluna DIREITA            
 -------------------------------------------------------------------------*/
 
-.right-column-2 {
+.right-column {
+    font-family: 'Oxanium', sans-serif;
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 100vw;
+    width: 100%;
     min-height: 100vh;
-    padding: 30px;
     background-color: #ecf0f1;
     overflow-y: auto;
+    transition: width 1.5s ease;
 }
 
 
