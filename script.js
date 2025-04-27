@@ -45,8 +45,7 @@ window.addEventListener('DOMContentLoaded', () => {
 const toggleButton = document.getElementById('toggle-menu');
 const toggleSpan = toggleButton.querySelector('span');
 const menu = document.getElementById('x-column');
-const resizer = document.getElementById('default-content');
-const resizer_2 = document.getElementById('menu-content');
+const resizer = document.getElementById('menu-content');
 const footer = document.getElementById('x-footer');
 
 toggleButton.addEventListener('click', () => {
@@ -58,14 +57,12 @@ toggleButton.addEventListener('click', () => {
         toggleSpan.textContent = 'Ocultar';
         // Se o menu estÃ¡ ativo, optmiza os elementos...
         resizer.style.width = '78%';
-        resizer_2.style.width = '78%';
         footer.style.width = '122%';
 
     } else {
         toggleSpan.textContent = 'Menu';
         // Se o menu nÃ£o estÃ¡ ativo, restaura as definiÃ§Ãµes...
         resizer.style.width = '100%';
-        resizer_2.style.width = '100%';
         footer.style.width = '100%';
     }
 });
@@ -126,7 +123,7 @@ function toggleSubmenu(item, submenu) {
 
 // Gerenciamento do menu
 const menuItems = document.querySelectorAll('#menu li');
-const sections = document.querySelectorAll('.right-column-2 section');
+const sections = document.querySelectorAll('.right-column section');
 
 menuItems.forEach(item => {
     const submenu = item.querySelector('.submenu');
@@ -488,12 +485,14 @@ function updateUIElements() {
     // Atualiza elementos da interface
     const elements = [
         { el: document.getElementById('connectButton'), display: isConnected ? 'none' : 'flex' },
+        { el: document.getElementById('disconnectButton'), display: isConnected ? 'flex' : 'none' },
         { el: document.getElementById('title'), width: isConnected ? '43%' : '50%' },
         { el: document.getElementById('login'), width: isConnected ? '27%' : '20%' },
-        { el: document.getElementById('default-content'), display: isConnected ? 'none' : 'flex' },
-        { el: document.getElementById('menu-content'), display: isConnected ? 'flex' : 'none' },
         { el: document.getElementById('home'), display: isConnected ? 'none' : 'flex' },
+        { el: document.getElementById('default-content'), display: isConnected ? 'none' : 'block' },
         { el: document.getElementById('user'), display: isConnected ? 'flex' : 'none' },
+        { el: document.getElementById('content1'), display: isConnected ? 'block' : 'none' },
+        { el: document.getElementById('online-items'), display: isConnected ? 'block' : 'none' },
 //      { el: document.getElementById('countdown'), display: isConnected ? 'none' : 'flex' },
     ];
 
@@ -535,7 +534,7 @@ optimizeElements(true);
 const disconnectButton = document.getElementById('disconnectButton');
 if (disconnectButton) {
     disconnectButton.addEventListener('click', () => {
-        optimizeElements(false); // Define o estado como desconectado
+        optimizeElements(false);                    // Define o estado como desconectado
         console.log('Painel desconectado com sucesso!');
     });
 }
