@@ -70,13 +70,10 @@ toggleButton.addEventListener('click', () => {
 
 
 
-
-
 /*=================================================================================================================
-    M E N U - L A T E R A L   D I N Ã‚ M I C O
+    M E N U - L A T E R A L   D I N Â M I C O
 =================================================================================================================*/
 
-// Adicione esta lÃ³gica na funÃ§Ã£o que gerencia os cliques do submenu
 function handleSubmenuItemClick(e, submenuItem) {
     e.stopPropagation();
     
@@ -111,13 +108,30 @@ function closeAllSubmenus() {
     });
 }
 
-function toggleSubmenu(item, submenu) {
+function toggleSubmenu(item, submenu, e) {
     const isOpen = submenu.style.display === 'block';
-    closeAllSubmenus();
+    const mainContentId = item.getAttribute('data-content');
     
+    // Se o submenu está fechado e estamos abrindo
     if (!isOpen) {
+        closeAllSubmenus();
         submenu.style.display = 'block';
         item.classList.add('submenu-active');
+        
+        // Mostra o conteúdo principal se existir
+        if (mainContentId) {
+            updateSections(mainContentId);
+        }
+    } 
+    // Se o submenu está aberto e estamos fechando
+    else {
+        submenu.style.display = 'none';
+        item.classList.remove('submenu-active');
+    }
+
+    // Previne que o evento de click se propague apenas se clicarmos no ícone de toggle
+    if (e.target.closest('.submenu-toggle')) {
+        e.stopPropagation();
     }
 }
 
@@ -130,8 +144,10 @@ menuItems.forEach(item => {
     
     item.addEventListener('click', (e) => {
         const isSubmenuClick = e.target.closest('.submenu');
+        const isToggleClick = e.target.closest('.submenu-toggle');
 
-        if (isSubmenuClick) {
+        // Se clicou em um item do submenu
+        if (isSubmenuClick && !isToggleClick) {
             handleSubmenuItemClick(e, e.target.closest('li'));
             return;
         }
@@ -142,9 +158,9 @@ menuItems.forEach(item => {
         // Adiciona classe ativa apropriada
         item.classList.add(isConnected ? 'active' : 'defaultActive');
 
+        // Se tem submenu
         if (submenu) {
-            e.preventDefault();
-            toggleSubmenu(item, submenu);
+            toggleSubmenu(item, submenu, e);
         } else {
             closeAllSubmenus();
             updateSections(item.getAttribute('data-content'));
@@ -165,6 +181,9 @@ document.addEventListener('keydown', (e) => {
         closeAllSubmenus();
     }
 });
+
+
+
 
 
 
@@ -1296,3 +1315,422 @@ document.querySelector('.qr-btn.download').addEventListener('click', () => {
             document.getElementById('countryCode').click();
         });
         
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        /*-------------------------------------------------------------------------------------------
+		----   CHAT     ------*/
+
+        document.addEventListener('DOMContentLoaded', function() {
+            initializeChat();
+        });
+        
+        function initializeChat() {
+            // Filter contacts
+            const filterButtons = document.querySelectorAll('.filter-btn');
+            filterButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    filterButtons.forEach(btn => btn.classList.remove('active'));
+                    button.classList.add('active');
+                    filterContacts(button.dataset.filter);
+                });
+            });
+        
+            // Contact selection
+            const contactItems = document.querySelectorAll('.contact-item');
+            contactItems.forEach(item => {
+                item.addEventListener('click', () => {
+                    contactItems.forEach(contact => contact.classList.remove('active'));
+                    item.classList.add('active');
+                    updateChatInterface(item);
+                });
+            });
+        
+            // Chat input handling
+            const chatInput = document.querySelector('.input-container input');
+            const sendButton = document.querySelector('.send-btn');
+        
+            chatInput.addEventListener('keypress', (e) => {
+                if (e.key === 'Enter' && chatInput.value.trim()) {
+                    sendMessage(chatInput.value);
+                    chatInput.value = '';
+                }
+            });
+        
+            sendButton.addEventListener('click', () => {
+                if (chatInput.value.trim()) {
+                    sendMessage(chatInput.value);
+                    chatInput.value = '';
+                }
+            });
+        
+            // Shared content tabs
+            const tabButtons = document.querySelectorAll('.tab-btn');
+            const contentPanels = document.querySelectorAll('.content-panel');
+        
+            tabButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    const tab = button.dataset.tab;
+                    
+                    tabButtons.forEach(btn => btn.classList.remove('active'));
+                    contentPanels.forEach(panel => panel.classList.remove('active'));
+                    
+                    button.classList.add('active');
+                    document.getElementById(`${tab}-panel`).classList.add('active');
+                });
+            });
+        
+            // Initialize emoji picker (you can integrate a library like emoji-mart)
+            const emojiButton = document.querySelector('.emoji-btn');
+            emojiButton.addEventListener('click', () => {
+                // Implement emoji picker functionality
+                console.log('Emoji picker clicked');
+            });
+        
+            // Initialize attachment functionality
+            const attachmentButton = document.querySelector('.attachment-btn');
+            attachmentButton.addEventListener('click', () => {
+                // Implement attachment functionality
+                console.log('Attachment button clicked');
+            });
+        }
+        
+        function filterContacts(filter) {
+            const contacts = document.querySelectorAll('.contact-item');
+            contacts.forEach(contact => {
+                switch(filter) {
+                    case 'online':
+                        contact.style.display = contact.classList.contains('online') ? 'flex' : 'none';
+                        break;
+                    case 'favorites':
+                        contact.style.display = contact.classList.contains('favorite') ? 'flex' : 'none';
+                        break;
+                    default:
+                        contact.style.display = 'flex';
+                }
+            });
+        }
+        
+        function updateChatInterface(contactItem) {
+            const name = contactItem.querySelector('h4').textContent;
+            const status = contactItem.querySelector('p').textContent;
+            const avatar = contactItem.querySelector('img').src;
+        
+            // Update chat header
+            document.querySelector('.chat-user-info img').src = avatar;
+            document.querySelector('.user-details h4').textContent = name;
+            document.querySelector('.user-details p').textContent = 'Online - Disponível';
+        
+            // Update chat details sidebar
+            document.querySelector('.user-profile img').src = avatar;
+            document.querySelector('.user-profile h4').textContent = name;
+            document.querySelector('.user-profile p').textContent = status;
+        
+            // Clear chat messages
+            document.querySelector('.chat-messages').innerHTML = '';
+            
+            // Load chat history (simulate with dummy data)
+            loadChatHistory();
+        }
+        
+        function sendMessage(text) {
+            const messagesContainer = document.querySelector('.chat-messages');
+            const messageHTML = `
+                <div class="message sent">
+                    <div class="message-content">
+                        <p>${text}</p>
+                        <span class="message-time">${getCurrentTime()}</span>
+                    </div>
+                </div>
+            `;
+            messagesContainer.insertAdjacentHTML('beforeend', messageHTML);
+            messagesContainer.scrollTop = messagesContainer.scrollHeight;
+        
+            // Simulate received message
+            setTimeout(() => {
+                const replyHTML = `
+                    <div class="message received">
+                        <div class="message-content">
+                            <p>Mensagem recebida! 👍</p>
+                            <span class="message-time">${getCurrentTime()}</span>
+                        </div>
+                    </div>
+                `;
+                messagesContainer.insertAdjacentHTML('beforeend', replyHTML);
+                messagesContainer.scrollTop = messagesContainer.scrollHeight;
+            }, 1000);
+        }
+        
+        function loadChatHistory() {
+            // Simulate loading chat history
+            const messages = [
+                { type: 'received', text: 'Olá! Como posso ajudar?', time: '09:30' },
+                { type: 'sent', text: 'Oi! Preciso de informações sobre o último relatório.', time: '09:31' },
+                { type: 'received', text: 'Claro! Vou te enviar agora.', time: '09:32' }
+            ];
+        
+            const messagesContainer = document.querySelector('.chat-messages');
+            messages.forEach(msg => {
+                const messageHTML = `
+                    <div class="message ${msg.type}">
+                        <div class="message-content">
+                            <p>${msg.text}</p>
+                            <span class="message-time">${msg.time}</span>
+                        </div>
+                    </div>
+                `;
+                messagesContainer.insertAdjacentHTML('beforeend', messageHTML);
+            });
+            messagesContainer.scrollTop = messagesContainer.scrollHeight;
+        }
+        
+        function getCurrentTime() {
+            const now = new Date();
+            return `${String(now.getHours()).padStart(2, '0')}:${String(now.getMinutes()).padStart(2, '0')}`;
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        document.addEventListener('DOMContentLoaded', function() {
+            initializeTemplateEditor();
+        });
+        
+        function initializeTemplateEditor() {
+            // Category selection
+            const categoryButtons = document.querySelectorAll('.category-btn');
+            categoryButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    categoryButtons.forEach(btn => btn.classList.remove('active'));
+                    button.classList.add('active');
+                    filterTemplates(button.dataset.category);
+                });
+            });
+        
+            // Template selection
+            const templateItems = document.querySelectorAll('.template-item');
+            templateItems.forEach(item => {
+                item.addEventListener('click', (e) => {
+                    if (!e.target.closest('.template-actions')) {
+                        templateItems.forEach(template => template.classList.remove('active'));
+                        item.classList.add('active');
+                        loadTemplate(item);
+                    }
+                });
+            });
+        
+            // Template actions
+            document.querySelectorAll('.action-btn').forEach(btn => {
+                btn.addEventListener('click', (e) => {
+                    e.stopPropagation();
+                    const action = btn.getAttribute('title').toLowerCase();
+                    const templateItem = btn.closest('.template-item');
+                    handleTemplateAction(action, templateItem);
+                });
+            });
+        
+            // Editor toolbar functionality
+            const toolbarButtons = document.querySelectorAll('.toolbar-btn');
+            toolbarButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    const command = button.getAttribute('title').toLowerCase();
+                    if (command === 'variáveis') {
+                        toggleVariablesPanel();
+                    } else {
+                        executeCommand(command);
+                    }
+                });
+            });
+        
+            // Variables drag and drop
+            const variableItems = document.querySelectorAll('.variable-item');
+            const emailBody = document.querySelector('.email-body');
+        
+            variableItems.forEach(item => {
+                item.addEventListener('dragstart', (e) => {
+                    e.dataTransfer.setData('text/plain', item.dataset.variable);
+                });
+            });
+        
+            emailBody.addEventListener('dragover', (e) => {
+                e.preventDefault();
+            });
+        
+            emailBody.addEventListener('drop', (e) => {
+                e.preventDefault();
+                const variable = e.dataTransfer.getData('text/plain');
+                const selection = window.getSelection();
+                
+                if (selection.rangeCount) {
+                    const range = selection.getRangeAt(0);
+                    const node = document.createTextNode(variable);
+                    range.insertNode(node);
+                    range.collapse(false);
+                }
+            });
+        
+            // Save functionality
+            document.querySelector('.save-btn').addEventListener('click', saveTemplate);
+            
+            // Preview functionality
+            document.querySelector('.preview-btn').addEventListener('click', previewTemplate);
+            
+            // Send functionality
+            document.querySelector('.send-btn').addEventListener('click', sendTemplate);
+        }
+        
+        function filterTemplates(category) {
+            const templates = document.querySelectorAll('.template-item');
+            templates.forEach(template => {
+                if (category === 'all' || template.dataset.category === category) {
+                    template.style.display = 'flex';
+                } else {
+                    template.style.display = 'none';
+                }
+            });
+        }
+        
+        function loadTemplate(templateItem) {
+            const title = templateItem.querySelector('h4').textContent;
+            const description = templateItem.querySelector('p').textContent;
+            
+            document.querySelector('.editor-title input:first-child').value = title;
+            document.querySelector('.editor-title input:last-child').value = description;
+            
+            // Aqui você carregaria o conteúdo real do template
+            // Por enquanto, mantemos o conteúdo de exemplo
+        }
+        
+        function handleTemplateAction(action, templateItem) {
+            switch(action) {
+                case 'duplicar': {
+                    const clone = templateItem.cloneNode(true);
+                    templateItem.after(clone);
+                    break;
+                }
+                case 'excluir': {
+                    if (confirm('Tem certeza que deseja excluir este template?')) {
+                        templateItem.remove();
+                    }
+                    break;
+                }
+            }
+        }
+        
+        function executeCommand(command) {
+            switch(command) {
+                case 'negrito': {
+                    document.execCommand('bold', false, null);
+                    break;
+                }
+                case 'itálico': {
+                    document.execCommand('italic', false, null);
+                    break;
+                }
+                case 'sublinhado': {
+                    document.execCommand('underline', false, null);
+                    break;
+                }
+                case 'lista não ordenada': {
+                    document.execCommand('insertUnorderedList', false, null);
+                    break;
+                }
+                case 'lista ordenada': {
+                    document.execCommand('insertOrderedList', false, null);
+                    break;
+                }
+                case 'link': {
+                    const url = prompt('Digite a URL:');
+                    if (url) {
+                        document.execCommand('createLink', false, url);
+                    }
+                    break;
+                }
+                case 'imagem': {
+                    const imgUrl = prompt('Digite a URL da imagem:');
+                    if (imgUrl) {
+                        document.execCommand('insertImage', false, imgUrl);
+                    }
+                    break;
+                }
+                case 'limpar formatação': {
+                    document.execCommand('removeFormat', false, null);
+                    break;
+                }
+            }
+        }
+        
+        function toggleVariablesPanel() {
+            const panel = document.querySelector('.variables-panel');
+            panel.style.display = panel.style.display === 'none' ? 'flex' : 'none';
+        }
+        
+        function saveTemplate() {
+            // Implementar lógica de salvamento
+            alert('Template salvo com sucesso!');
+        }
+        
+        function previewTemplate() {
+            const content = document.querySelector('.email-body').innerHTML;
+            const previewWindow = window.open('', '_blank');
+            previewWindow.document.write(`
+                <html>
+                    <head>
+                        <title>Preview do Template</title>
+                        <style>
+                            body { font-family: Arial, sans-serif; padding: 20px; }
+                        </style>
+                    </head>
+                    <body>${content}</body>
+                </html>
+            `);
+        }
+        
+        function sendTemplate() {
+            // Implementar lógica de envio
+            alert('Template enviado com sucesso!');
+        }
+
+
+
+
+
+// Exemplo de integração com Twitter API
+async function fetchTwitterMetrics() {
+    const response = await twitter.get('analytics/metrics', {
+        metric_types: ['engagement', 'followers', 'mentions'],
+        start_time: startDate,
+        end_time: endDate
+    });
+    return response.data;
+}
+
+// Exemplo de análise de sentimento
+async function analyzeSentiment(text) {
+    const sentiment = await naturalLanguageAPI.analyzeSentiment({
+        document: { content: text, type: 'PLAIN_TEXT' }
+    });
+    return sentiment.documentSentiment;
+}
