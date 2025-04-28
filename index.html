@@ -258,9 +258,13 @@
                                 <ul class="submenu">
                                     <li data-content="content6-1">
                                         <i class="fas fa-comments"></i>
-                                        <span>Contactos & Chat Profissional</span>
+                                        <span>Caixa de Entrada</span>
                                     </li>
                                     <li data-content="content6-2">
+                                        <i class="fas fa-comments"></i>
+                                        <span>Contactos & Chat Profissional</span>
+                                    </li>
+                                    <li data-content="content6-3">
                                         <i class="fas fa-file-alt"></i>
                                         <span>Templates</span>
                                     </li>
@@ -1116,11 +1120,11 @@
                                 <p>Ao clicar em "Aceitar", você confirma que leu e concorda com nossos Termos e Condições.</p>
                                 
                                 <div class="terms-actions">
-                                    <button class="action-btn primary">
+                                    <button class="terms-btn primary">
                                         <i class="fas fa-check"></i>
                                         <span>Aceitar Termos</span>
                                     </button>
-                                    <button class="action-btn secondary">
+                                    <button class="terms-btn secondary">
                                         <i class="fas fa-download"></i>
                                         <span>Baixar PDF</span>
                                     </button>
@@ -2915,11 +2919,341 @@
                     <section class="dynamic-section" id="content5" style="display:none;">                        
                         <div class="section-header alternative">
                             <h2>Social Feeds</h2>
-                            <p>Análises detalhadas e insights sobre as páginas das redes socias</p>
+                            <p>Análises detalhadas e insights sobre as páginas das redes sociais</p>
                         </div>
-
+                    
                         <!-- Container Principal -->
-                        <div class="section-container">
+                        <div class="section-container" id="social">
+                            <!-- Painel de Controle Superior -->
+                            <div class="social-dashboard-header">
+                                <div class="platform-selector">
+                                    <button class="platform-btn active" data-platform="all">
+                                        <i class="fas fa-border-all"></i>
+                                        Todas as Redes
+                                    </button>
+                                    <button class="platform-btn" data-platform="twitter">
+                                        <i class="fab fa-twitter"></i>
+                                        Twitter
+                                    </button>
+                                    <button class="platform-btn" data-platform="discord">
+                                        <i class="fab fa-discord"></i>
+                                        Discord
+                                    </button>
+                                    <button class="platform-btn" data-platform="telegram">
+                                        <i class="fab fa-telegram"></i>
+                                        Telegram
+                                    </button>
+                                </div>
+                                
+                                <div class="dashboard-actions">
+                                    <button class="add-page-btn">
+                                        <i class="fas fa-plus"></i>
+                                        Adicionar Página
+                                    </button>
+                                    <div class="date-range-picker">
+                                        <i class="fas fa-calendar"></i>
+                                        <select>
+                                            <option value="today">Hoje</option>
+                                            <option value="week">Última Semana</option>
+                                            <option value="month" selected>Último Mês</option>
+                                            <option value="quarter">Último Trimestre</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                    
+                            <!-- Cards de Métricas Gerais -->
+                            <div class="metrics-overview">
+                                <div class="metric-card">
+                                    <div class="metric-icon">
+                                        <i class="fas fa-users"></i>
+                                    </div>
+                                    <div class="metric-info">
+                                        <h3>Total de Seguidores</h3>
+                                        <div class="metric-value">245.8K</div>
+                                        <div class="metric-change positive">
+                                            <i class="fas fa-arrow-up"></i>
+                                            +5.2%
+                                        </div>
+                                    </div>
+                                </div>
+                    
+                                <div class="metric-card">
+                                    <div class="metric-icon">
+                                        <i class="fas fa-comments"></i>
+                                    </div>
+                                    <div class="metric-info">
+                                        <h3>Engajamento</h3>
+                                        <div class="metric-value">12.3K</div>
+                                        <div class="metric-change positive">
+                                            <i class="fas fa-arrow-up"></i>
+                                            +3.7%
+                                        </div>
+                                    </div>
+                                </div>
+                    
+                                <div class="metric-card">
+                                    <div class="metric-icon">
+                                        <i class="fas fa-share-alt"></i>
+                                    </div>
+                                    <div class="metric-info">
+                                        <h3>Compartilhamentos</h3>
+                                        <div class="metric-value">8.5K</div>
+                                        <div class="metric-change negative">
+                                            <i class="fas fa-arrow-down"></i>
+                                            -1.2%
+                                        </div>
+                                    </div>
+                                </div>
+                    
+                                <div class="metric-card">
+                                    <div class="metric-icon">
+                                        <i class="fas fa-chart-line"></i>
+                                    </div>
+                                    <div class="metric-info">
+                                        <h3>Alcance</h3>
+                                        <div class="metric-value">789.2K</div>
+                                        <div class="metric-change positive">
+                                            <i class="fas fa-arrow-up"></i>
+                                            +8.9%
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            
+                            <div class="analytics-insights">
+                                <!-- Gráfico de Tendências -->
+                                <div class="insight-card trend-chart">
+                                    <div class="insight-header">
+                                        <h3>Tendências de Engajamento</h3>
+                                        <div class="chart-controls">
+                                            <button class="metric-toggle active" data-metric="engagement">
+                                                Engajamento
+                                            </button>
+                                            <button class="metric-toggle" data-metric="followers">
+                                                Seguidores
+                                            </button>
+                                            <button class="metric-toggle" data-metric="mentions">
+                                                Menções
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <div class="chart-container">
+                                        <!-- Aqui entraria a integração com biblioteca de gráficos -->
+                                        <div class="chart-placeholder"></div>
+                                    </div>
+                                </div>
+
+                                <!-- Top Posts -->
+                                <div class="insight-card top-posts">
+                                    <div class="insight-header">
+                                        <h3>Posts mais Engajados</h3>
+                                        <select class="platform-filter">
+                                            <option value="all">Todas as Redes</option>
+                                            <option value="twitter">Twitter</option>
+                                            <option value="discord">Discord</option>
+                                            <option value="telegram">Telegram</option>
+                                        </select>
+                                    </div>
+                                    <div class="posts-list">
+                                        <!-- Twitter Post -->
+                                        <div class="social-post" data-platform="twitter">
+                                            <div class="post-header">
+                                                <img src="default-images/avatar1.jpg" alt="Profile" class="post-avatar">
+                                                <div class="post-meta">
+                                                    <span class="post-author">CryptoNews</span>
+                                                    <span class="post-time">2h atrás</span>
+                                                </div>
+                                                <i class="fab fa-twitter platform-icon"></i>
+                                            </div>
+                                            <div class="post-content">
+                                                "Nova atualização do protocolo DeFi apresenta impressionantes resultados em testes! 🚀 #Web3 #DeFi"
+                                            </div>
+                                            <div class="post-stats">
+                                                <div class="stat">
+                                                    <i class="far fa-heart"></i>
+                                                    <span>1.2K</span>
+                                                </div>
+                                                <div class="stat">
+                                                    <i class="fas fa-retweet"></i>
+                                                    <span>856</span>
+                                                </div>
+                                                <div class="stat">
+                                                    <i class="far fa-comment"></i>
+                                                    <span>234</span>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <!-- Discord Message -->
+                                        <div class="social-post" data-platform="discord">
+                                            <div class="post-header">
+                                                <img src="default-images/avatar2.jpg" alt="Profile" class="post-avatar">
+                                                <div class="post-meta">
+                                                    <span class="post-author">Web3 Developers</span>
+                                                    <span class="post-time">5h atrás</span>
+                                                </div>
+                                                <i class="fab fa-discord platform-icon"></i>
+                                            </div>
+                                            <div class="post-content">
+                                                "📢 Nova documentação técnica disponível! Confira o guia atualizado de integração Smart Contracts."
+                                            </div>
+                                            <div class="post-stats">
+                                                <div class="stat">
+                                                    <i class="fas fa-thumbs-up"></i>
+                                                    <span>450</span>
+                                                </div>
+                                                <div class="stat">
+                                                    <i class="far fa-comment"></i>
+                                                    <span>89</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Análise de Sentimento -->
+                                <div class="insight-card sentiment-analysis">
+                                    <div class="insight-header">
+                                        <h3>Análise de Sentimento</h3>
+                                        <div class="date-filter">Últimas 24 horas</div>
+                                    </div>
+                                    <div class="sentiment-overview">
+                                        <div class="sentiment-chart">
+                                            <!-- Gráfico de donut aqui -->
+                                            <div class="chart-placeholder circular"></div>
+                                        </div>
+                                        <div class="sentiment-stats">
+                                            <div class="sentiment-stat positive">
+                                                <div class="stat-label">
+                                                    <i class="fas fa-smile"></i>
+                                                    Positivo
+                                                </div>
+                                                <div class="stat-value">75%</div>
+                                                <div class="stat-bar">
+                                                    <div class="bar-fill" style="width: 75%"></div>
+                                                </div>
+                                            </div>
+                                            <div class="sentiment-stat neutral">
+                                                <div class="stat-label">
+                                                    <i class="fas fa-meh"></i>
+                                                    Neutro
+                                                </div>
+                                                <div class="stat-value">20%</div>
+                                                <div class="stat-bar">
+                                                    <div class="bar-fill" style="width: 20%"></div>
+                                                </div>
+                                            </div>
+                                            <div class="sentiment-stat negative">
+                                                <div class="stat-label">
+                                                    <i class="fas fa-frown"></i>
+                                                    Negativo
+                                                </div>
+                                                <div class="stat-value">5%</div>
+                                                <div class="stat-bar">
+                                                    <div class="bar-fill" style="width: 5%"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Lista de Páginas Monitoradas -->
+                            <div class="monitored-pages">
+                                <div class="pages-header">
+                                    <h3>Páginas Monitoradas</h3>
+                                    <div class="pages-actions">
+                                        <div class="search-box">
+                                            <i class="fas fa-search"></i>
+                                            <input type="text" placeholder="Buscar páginas...">
+                                        </div>
+                                        <button class="sort-btn">
+                                            <i class="fas fa-sort"></i>
+                                            Ordenar
+                                        </button>
+                                    </div>
+                                </div>
+                    
+                                <div class="pages-list">
+                                    <!-- Twitter Page -->
+                                    <div class="page-card" data-platform="twitter">
+                                        <div class="page-info">
+                                            <div class="page-icon">
+                                                <i class="fab fa-twitter"></i>
+                                            </div>
+                                            <div class="page-details">
+                                                <h4>CryptoNews</h4>
+                                                <span class="page-handle">@cryptonews</span>
+                                            </div>
+                                            <div class="page-stats">
+                                                <div class="stat">
+                                                    <span class="stat-value">125K</span>
+                                                    <span class="stat-label">Seguidores</span>
+                                                </div>
+                                                <div class="stat">
+                                                    <span class="stat-value">4.2K</span>
+                                                    <span class="stat-label">Engajamento</span>
+                                                </div>
+                                                <div class="stat">
+                                                    <span class="stat-value">89%</span>
+                                                    <span class="stat-label">Sentimento</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="page-actions">
+                                            <button class="action-btn" title="Editar">
+                                                <i class="fas fa-edit"></i>
+                                            </button>
+                                            <button class="action-btn" title="Visualizar Analytics">
+                                                <i class="fas fa-chart-bar"></i>
+                                            </button>
+                                            <button class="action-btn delete" title="Remover">
+                                                <i class="fas fa-trash-alt"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                    
+                                    <!-- Discord Server -->
+                                    <div class="page-card" data-platform="discord">
+                                        <div class="page-info">
+                                            <div class="page-icon">
+                                                <i class="fab fa-discord"></i>
+                                            </div>
+                                            <div class="page-details">
+                                                <h4>Web3 Developers</h4>
+                                                <span class="page-handle">web3devs.discord.gg</span>
+                                            </div>
+                                            <div class="page-stats">
+                                                <div class="stat">
+                                                    <span class="stat-value">45K</span>
+                                                    <span class="stat-label">Membros</span>
+                                                </div>
+                                                <div class="stat">
+                                                    <span class="stat-value">2.8K</span>
+                                                    <span class="stat-label">Ativos</span>
+                                                </div>
+                                                <div class="stat">
+                                                    <span class="stat-value">92%</span>
+                                                    <span class="stat-label">Retenção</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="page-actions">
+                                            <button class="action-btn" title="Editar">
+                                                <i class="fas fa-edit"></i>
+                                            </button>
+                                            <button class="action-btn" title="Visualizar Analytics">
+                                                <i class="fas fa-chart-bar"></i>
+                                            </button>
+                                            <button class="action-btn delete" title="Remover">
+                                                <i class="fas fa-trash-alt"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>                        
                     </section>
 
@@ -2944,11 +3278,217 @@
 
 
 
+                    
+                    <!-- Seção Principal de Emails -->
+                    <section id="content6-1" class="dynamic-section" style="display:none;">
+                        <div class="section-header alternative">
+                            <h2>Caixa de Entrada</h2>
+                            <p>Gerencie suas comunicações profissionais</p>
+                        </div>
+
+                        <div class="email-workspace" id="inbox">
+                            <!-- Sidebar de Navegação de Email -->
+                            <div class="email-sidebar">
+                                <!-- Botão Compor -->
+                                <button class="compose-btn">
+                                    <i class="fas fa-pen"></i>
+                                    Novo Email
+                                </button>
+
+                                <!-- Pastas de Email -->
+                                <div class="email-folders">
+                                    <div class="folder active">
+                                        <i class="fas fa-inbox"></i>
+                                        <span>Caixa de Entrada</span>
+                                        <span class="badge">3</span>
+                                    </div>
+                                    <div class="folder">
+                                        <i class="fas fa-paper-plane"></i>
+                                        <span>Enviados</span>
+                                    </div>
+                                    <div class="folder">
+                                        <i class="fas fa-star"></i>
+                                        <span>Favoritos</span>
+                                    </div>
+                                    <div class="folder">
+                                        <i class="fas fa-file-alt"></i>
+                                        <span>Rascunhos</span>
+                                        <span class="badge">2</span>
+                                    </div>
+                                    <div class="folder">
+                                        <i class="fas fa-trash-alt"></i>
+                                        <span>Lixeira</span>
+                                    </div>
+                                </div>
+
+                                <!-- Labels -->
+                                <div class="email-labels">
+                                    <h3>Labels</h3>
+                                    <div class="label">
+                                        <span class="color-dot" style="background: #FF6B6B;"></span>
+                                        <span>Importante</span>
+                                    </div>
+                                    <div class="label">
+                                        <span class="color-dot" style="background: #4CAF50;"></span>
+                                        <span>DeFi</span>
+                                    </div>
+                                    <div class="label">
+                                        <span class="color-dot" style="background: #3839E1;"></span>
+                                        <span>NFTs</span>
+                                    </div>
+                                    <div class="label">
+                                        <span class="color-dot" style="background: #FFA726;"></span>
+                                        <span>Marketing</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Lista de Emails -->
+                            <div class="email-list">
+                                <!-- Barra de Ferramentas -->
+                                <div class="email-toolbar">
+                                    <div class="toolbar-left">
+                                        <div class="checkbox-wrapper">
+                                            <input type="checkbox" id="selectAll">
+                                            <label for="selectAll"></label>
+                                        </div>
+                                        <button class="toolbar-btn" title="Atualizar">
+                                            <i class="fas fa-sync-alt"></i>
+                                        </button>
+                                        <button class="toolbar-btn" title="Arquivar">
+                                            <i class="fas fa-archive"></i>
+                                        </button>
+                                        <button class="toolbar-btn" title="Spam">
+                                            <i class="fas fa-exclamation-circle"></i>
+                                        </button>
+                                        <button class="toolbar-btn" title="Excluir">
+                                            <i class="fas fa-trash"></i>
+                                        </button>
+                                    </div>
+                                    
+                                    <div class="toolbar-right">
+                                        <div class="search-box">
+                                            <i class="fas fa-search"></i>
+                                            <input type="text" placeholder="Pesquisar emails...">
+                                        </div>
+                                        <button class="toolbar-btn" title="Configurações">
+                                            <i class="fas fa-cog"></i>
+                                        </button>
+                                    </div>
+                                </div>
+
+                                <!-- Lista de Mensagens -->
+                                <div class="email-items">
+                                    <div class="email-item unread">
+                                        <div class="checkbox-wrapper">
+                                            <input type="checkbox" id="email1">
+                                            <label for="email1"></label>
+                                        </div>
+                                        <div class="star-btn">
+                                            <i class="far fa-star"></i>
+                                        </div>
+                                        <div class="sender">
+                                            <img src="default-images/avatar1.jpg" alt="Sender" class="sender-avatar">
+                                            <span class="sender-name">Alice Johnson</span>
+                                        </div>
+                                        <div class="email-content">
+                                            <div class="email-subject">Relatório de Análise DeFi Q2</div>
+                                            <div class="email-preview">Aqui está o relatório atualizado sobre os principais protocolos...</div>
+                                        </div>
+                                        <div class="email-meta">
+                                            <span class="email-time">10:30</span>
+                                            <div class="email-labels">
+                                                <span class="label" style="background: #4CAF50;">DeFi</span>
+                                            </div>
+                                            <div class="attachment-icon">
+                                                <i class="fas fa-paperclip"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Mais items de email aqui... -->
+                                </div>
+                            </div>
+
+                            <!-- Visualização do Email -->
+                            <div class="email-view">
+                                <div class="view-header">
+                                    <h2>Relatório de Análise DeFi Q2</h2>
+                                    <div class="email-actions">
+                                        <button class="action-btn" title="Responder">
+                                            <i class="fas fa-reply"></i>
+                                        </button>
+                                        <button class="action-btn" title="Encaminhar">
+                                            <i class="fas fa-forward"></i>
+                                        </button>
+                                        <button class="action-btn" title="Imprimir">
+                                            <i class="fas fa-print"></i>
+                                        </button>
+                                        <button class="action-btn" title="Mais">
+                                            <i class="fas fa-ellipsis-v"></i>
+                                        </button>
+                                    </div>
+                                </div>
+
+                                <div class="email-details">
+                                    <div class="sender-info">
+                                        <img src="default-images/avatar1.jpg" alt="Sender" class="sender-avatar">
+                                        <div class="sender-details">
+                                            <div class="sender-name">Alice Johnson</div>
+                                            <div class="sender-email">alice@defi-analytics.com</div>
+                                        </div>
+                                        <div class="email-date">27 Abril, 2025 10:30</div>
+                                    </div>
+
+                                    <div class="email-body">
+                                        <p>Olá Ben,</p>
+                                        <p>Segue em anexo o relatório atualizado sobre os principais protocolos DeFi do segundo trimestre.</p>
+                                        <p>Destaques importantes:</p>
+                                        <ul>
+                                            <li>Crescimento de TVL em 150%</li>
+                                            <li>Novos protocolos emergentes</li>
+                                            <li>Análise de riscos e oportunidades</li>
+                                        </ul>
+                                        <p>Atenciosamente,<br>Alice</p>
+                                    </div>
+
+                                    <div class="email-attachments">
+                                        <h4>Anexos (2)</h4>
+                                        <div class="attachment-list">
+                                            <div class="attachment-item">
+                                                <i class="fas fa-file-pdf"></i>
+                                                <div class="attachment-info">
+                                                    <span>DeFi-Report-Q2.pdf</span>
+                                                    <small>2.4 MB</small>
+                                                </div>
+                                                <button class="download-btn">
+                                                    <i class="fas fa-download"></i>
+                                                </button>
+                                            </div>
+                                            <div class="attachment-item">
+                                                <i class="fas fa-file-excel"></i>
+                                                <div class="attachment-info">
+                                                    <span>DeFi-Data-Q2.xlsx</span>
+                                                    <small>1.8 MB</small>
+                                                </div>
+                                                <button class="download-btn">
+                                                    <i class="fas fa-download"></i>
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+
+
                     <!-----------------------------------------------------------------------------------
                         C O N T A C T O S   &   C H A T   P R O F I S S I O N A L
                     ------------------------------------------------------------------------------------>
 
-                    <section id="content6-1" class="dynamic-section" style="display:none;">
+                    <section id="content6-2" class="dynamic-section" style="display:none;">
                         <div class="section-header alternative">
                             <h2>Contactos & Chat Profissional</h2>
                             <p>Gerencie seus contactos e conversas profissionais em um só lugar</p>
@@ -3160,7 +3700,7 @@
                         T E M P L A T E S
                     ------------------------------------------------------------------------------------>
 
-                    <section id="content6-2" class="dynamic-section" style="display:none;">
+                    <section id="content6-3" class="dynamic-section" style="display:none;">
                         <div class="section-header alternative">
                             <h2>Templates de E-mail</h2>
                             <p>Gerencie e personalize seus modelos de e-mail profissional</p>
