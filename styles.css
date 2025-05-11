@@ -84,15 +84,16 @@ body {
     word-spacing: 4px;
     color: #ffffff;
 }
-.copyright {
+.developer {
     font-family: 'Oxanium', sans-serif;
-    font-size: 11px;
+    font-size: 12px;
     letter-spacing: 1px;
     word-spacing: 2px;
-    color: #ffff00 !important;
+    color: #ffffff;
     width: 100%;
     margin-top: 6px;
 }
+.developer a,
 .copyright a {
     font-family: 'Orbitron', sans-serif;
     font-optical-sizing: auto;
@@ -103,7 +104,7 @@ body {
     text-transform: uppercase;
     color: #ffff00;
 }
-.copyright a:hover {
+.developer a:hover {
     color: #ffffff;
 }
 
@@ -272,19 +273,10 @@ body {
 
 #dashboard {
     display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    flex-direction: column;
-    width: 100vw;
-    min-height: 100vh;
-}
-
-.web-products {
-    display: flex;
     justify-content: flex-end;
     align-items: center;
-    width: 100%;
-    height: 100%;
+    width: 100vw;
+    min-height: 100vh;
 }
 
 
@@ -310,14 +302,14 @@ body {
 }
 
 /* Configurações do menu lateral */
-#x-column {
+#lateral-menu {
     position: fixed;
     top: 0%;
     left: -23%;
     transition: left 1s;
     z-index: 9;
 }
-#x-column.active {
+#lateral-menu.active {
     left: 0;
 }
 
@@ -523,6 +515,53 @@ nav > ul > li.active:has(.submenu)::after {
 
 
 /*-------------------------------------------------------------------------
+    Configuração da Coluna DIREITA            
+-------------------------------------------------------------------------*/
+
+.right-column {
+    font-family: 'Oxanium', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    width: 100%;
+    min-height: 100vh;
+    background: transparent;
+    transition: width 1.5s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Configuração do Fundo de Partículas */
+#particles-js {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    z-index: 6;
+}
+
+/* Stats do particles (opcional - pode remover se não desejar) */
+.count-particles {
+    background: rgba(0,0,34,0.5);
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    width: auto;
+    color: #13E8E9;
+    font-size: .8em;
+    text-align: left;
+    padding: 4px 8px;
+    border-radius: 3px;
+    font-family: Helvetica, Arial, sans-serif;
+    font-weight: bold;
+    z-index: 7;
+}
+
+
+
+/*-------------------------------------------------------------------------
     LAYOUT PADRÃO DO PAINEL          
 -------------------------------------------------------------------------*/
 
@@ -549,13 +588,13 @@ nav > ul > li.active:has(.submenu)::after {
     height: 100%;
     background-image: linear-gradient(340deg, #3839E1 27%, #000000 60%); /* Cor do overlay e opacidade */
     opacity: 0.8;
-    z-index: 1; /* Garante que o overlay fique acima da imagem */
+    z-index: 9; /* Garante que o overlay fique acima da imagem */
 }
   
 /* Estilos adicionais para o conteúdo da div (opcional) */
 #default-content > * {
     position: relative;
-    z-index: 3; /* Garante que o conteúdo fique acima do overlay */
+    z-index: 11; /* Garante que o conteúdo fique acima do overlay */
 }  
 
 
@@ -698,24 +737,6 @@ hr {
 
 
 /*-------------------------------------------------------------------------
-    Configuração da Coluna DIREITA            
--------------------------------------------------------------------------*/
-
-.right-column {
-    font-family: 'Oxanium', sans-serif;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    min-height: 100vh;
-    background-color: #ecf0f1;
-    overflow-y: auto;
-    transition: width 1.5s ease;
-}
-
-
-
-/*-------------------------------------------------------------------------
     B A R R A   D E   R O L A G E M   V E R T I C A L              
 -------------------------------------------------------------------------*/
 
@@ -745,26 +766,28 @@ nav::-webkit-scrollbar-thumb:hover {
     R O D A P É   D O   L A Y O U T         
 ---------------------------------------------------------------------------*/
 
-.final-section {
-    font-family: 'Oxanium', sans-serif;
-    font-size: 12px;
-    font-weight: 600;
-    letter-spacing: 2px;
-    word-spacing: 2px;
+.final-section {   
     background-color: #000000;
-    color: #ffffff;
     text-align: center;
     padding: 10px;
     width: 100%;
     box-shadow: 0 -4px 20px -15px #ffffff;
 }
-
-.final-section .copyright,
-.final-section .copyright a:hover {
+.copyright {
+    color: #ffffff;
+    font-family: 'Oxanium', sans-serif;
     font-weight: 400;
+    letter-spacing: 1px;
+    word-spacing: 2px; 
+    font-size: 12px;
+    line-height: 15px;
+}
+
+.copyright a:hover,
+.copyright .developer {
     color: #ffff00 !important;
 }
-.final-section .copyright a {
+.copyright a {
     color: #3839e1 !important;
 }
 
@@ -1116,37 +1139,4 @@ body.light-theme #dark:hover {
 }
 body.dark-theme #light:hover {
     color: #3839E1;
-}
-
-body.dark-theme #welcome {
-    background-image: linear-gradient(140deg, #ffffff 33%, #3839e1 72%);
-}
-
-body.dark-theme .title h1,
-body.dark-theme .copyright,
-body.dark-theme .copyright a {
-    color: #000000 !important;
-}
-
-body.dark-theme #connectButton {    
-    background-color: #ffffff;
-    color: #3839e1;
-}
-body.dark-theme #connectButton:hover {
-    color: #000000;
-}
-
-body.dark-theme #toggle-menu {
-    background-color: #000000;
-    color: #ffffff;
-}
-body.dark-theme #x-column.active {
-    box-shadow: 9px 0 10px -3px rgba(255, 255, 255, 0.2);
-}
-
-body.dark-theme .left-column {
-    background: #222222 !important;
-}
-body.dark-theme #standard-widget {
-    display: none;
 }
